@@ -15,7 +15,7 @@ The [Groove (2007) Security White paper](http://www.nsa.gov/ia/_files/support/Of
 
 * Encrypts all content on disk and over the network. Groove 2007 automatically encrypts all user accounts, workspaces, and their contents locally using 192-bit encryption. Furthermore, all content and activity within a workspace that is sent across the network is also encrypted and can only be decrypted by other members of the workspace. 
 
-* Provides user–driven workspace access control. Role-based access control is a security feature that most organizations want, but, in practice, find unwieldy to implement. Traditionally, IT resources are required to move users into separate access control lists. After initial setup, these access control lists remain static and inflexible. Groove 2007 pushes the power to determine user permissions to the manager of each workspace. With Groove 2007, setting the role of a workspace member and configuring access rights take just seconds
+* Provides user-driven workspace access control. Role-based access control is a security feature that most organizations want, but, in practice, find unwieldy to implement. Traditionally, IT resources are required to move users into separate access control lists. After initial setup, these access control lists remain static and inflexible. Groove 2007 pushes the power to determine user permissions to the manager of each workspace. With Groove 2007, setting the role of a workspace member and configuring access rights take just seconds
 
 ## Identity verification
 
