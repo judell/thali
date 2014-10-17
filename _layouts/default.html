@@ -19,14 +19,26 @@
   {% if page.title != null %}
     <h1 class="PageTitle">{{ page.title }}</h1>
   {% endif %}
+  
+ <table>
+  
+ <tr>
+ <td valign="top" style="width:15%;background-color:lightgray">
 
-<div id="toc" style="float:left;width:20%;margin-right: 30px;background-color=lightgray">
   {% include TableOfContents.html %}
-</div>
+</tdv>
+
+<td style="width:30px"></td>
+
+<td>
   
 <div id="main">
   {{ content }}
 </div>
+
+</td>
+</tr>
+</table>
 
 </body>
 </html>
