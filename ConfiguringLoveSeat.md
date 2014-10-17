@@ -1,6 +1,6 @@
 ---
 title: Configuring LoveSeat
-layout: page
+layout: default
 ---
 
 <dl>
