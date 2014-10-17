@@ -23,5 +23,5 @@ In the manual scenario, users examine the digital fingerprints of other users' p
 
 ## Peer to Peer Chapter 18: Security
 
-We have asked permission to reprint [the chapter](http://my.safaribooksonline.com/book/technology-management/059600110x/iiidot-technical-topics/ch18-1-fm2xml) on Groove's cryptographic mechanisms.
+We have asked permission to reprint [the chapter](http://my.safaribooksonline.com/book/technology-management/059600110&shy;x/iiidot-technical-topics/ch18-1-fm2xml) on Groove's cryptographic mechanisms.
 
