@@ -27,9 +27,6 @@ Personal devices can store our data, exchange it with trusted peers, and sync to
 
 Thali is being actively developed by Jason Poon, Jon Udell and Yaron Y. Goland assigned to the Microsoft Open Technologies Hub. We love all sorts of [contributions!](WaysToContribute)
 
-# Table of Contents 
-
-Please look [here](TableOfContents).
 
 
 
