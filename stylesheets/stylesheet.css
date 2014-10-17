@@ -125,6 +125,7 @@ dl dt {
 h1, h2, h3, h4, p, li, dt, dd, a, code, pre {
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-bottom: 8px;
 }
 
 code {
