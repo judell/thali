@@ -30,7 +30,6 @@ Thali is being actively developed by Jason Poon, Jon Udell and Yaron Y. Goland a
 
 Please look [here](TableOfContents).
 
-Here is a [new page](NewPage).
 
 
 
