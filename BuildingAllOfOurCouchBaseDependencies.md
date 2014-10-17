@@ -1,3 +1,8 @@
+---
+title: Building All of our Couchbase Dependencies
+layout: default
+---
+
 <dl>
 <dt> Repository Location</dt>
 <dd> [[https://github.com/yaronyg/couchbase-lite-java-native]]</dd>
@@ -26,20 +31,20 @@ To actually do a build:
 
 <hr>
 
-### Notes 
+# Notes 
 
-#### couchbase-lite-java-native 
+## couchbase-lite-java-native 
 
 You may need to update the gradle.properties file (until the bug fix is committed) to this build to satisfy the build.gradle requirement for MAVEN_UPLOAD_VERSION.  Should look like this:
 
-```
+<pre>
 systemProp.UPLOAD_VERSION_CBLITE=1.0.0-beta3rc1
 systemProp.MAVEN_UPLOAD_VERSION=1.0.0-beta3rc1
-```
+</pre>
 
 First try fails, header file conflicts.
 
-```
+<pre>
 C:\Users\Jon\thali-master\couchbase-lite-java-native>gradlew uploadArchives
 :compileJava
 :processResources
@@ -50,20 +55,20 @@ C:\Users\Jon\thali-master\couchbase-lite-java-native\src\main\c\com_couchbase_li
         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vadefs.h(59) : see declaration of 'va_list'
 C:\Users\Jon\thali-master\couchbase-lite-java-native\src\main\c\com_couchbase_lite_storage_JavaSQLiteStorageEngine.c(33) : error C2146: syntax error : missing ';' before identifier 'ap'
 C:\Users\Jon\thali-master\couchbase-lite-java-native\src\main\c\com_couchbase_lite_storage_JavaSQLiteStorageEngine.c(33) : error C2065: 'ap' : undeclared identifier
-```
+</pre>
 
 Move c:\MinGW\mingw32\bin;c:\MinGW\bin; from end of %PATH% to front and retry
 
-```
+<pre>
 C:\Users\Jon\thali-master\couchbase-lite-java-native\build\objectFiles\native_librarySharedLibrary\windows_x86\native_libraryC\log.obj:(.text$mn+0x0): multiple definition of `log_w'
 C:\Users\Jon\thali-master\couchbase-lite-java-native\build\objectFiles\native_librarySharedLibrary\windows_x86\native_libraryC\log.o:log.c:(.text+0x1ea): first defined here
 C:\Users\Jon\thali-master\couchbase-lite-java-native\build\objectFiles\native_librarySharedLibrary\windows_x86\native_libraryC\log.obj:(.text$mn+0x30): multiple definition of `log_e'
 C:\Users\Jon\thali-master\couchbase-lite-java-native\build\objectFiles\native_librarySharedLibrary\windows_x86\native_libraryC\log.o:log.c:(.text+0x219): first defined here
-```
+</pre>
 
 gradle clean and retry
 
-```
+<pre>
 C:\Users\Jon\thali-master\couchbase-lite-java-native>gradlew clean
 
 BUILD SUCCESSFUL
@@ -90,11 +95,11 @@ Transferring 1K from remote
 Uploaded 1K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-#### couchbase-lite-java-core 
+## couchbase-lite-java-core 
 
-```
+<pre>
 C:\Users\Jon\thali-master\couchbase-lite-java-core>gradlew uploadArchives
 :compileJava UP-TO-DATE
 :processResources UP-TO-DATE
@@ -112,11 +117,11 @@ Transferring 231K from remote
 Uploaded 231K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-#### couchbase-lite-java-listener 
+## couchbase-lite-java-listener 
 
-```
+<pre>
 
 C:\Users\Jon\thali-master\couchbase-lite-java-listener>gradlew uploadArchives
 :compileJava
@@ -138,15 +143,15 @@ Uploaded 9K
 
 BUILD SUCCESSFUL
 
-```
+</pre>
 
-#### couchbase-lite-java 
+## couchbase-lite-java 
 
 First try: Not yet. Requires couchbase-lite-native.
 
 Second try after successful build of couchbase-lite-native
 
-```
+<pre>
 
 C:\Users\Jon\thali-master\couchbase-lite-java>gradlew uploadArchives
 :compileJava
@@ -166,11 +171,11 @@ Transferring 7K from remote
 Uploaded 7K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-#### couchbase-lite-android 
+## couchbase-lite-android 
 
-```
+<pre>
 C:\Users\Jon\thali-master\couchbase-lite-android>gradlew uploadArchives
 :compileLint
 :copyReleaseLint UP-TO-DATE
@@ -208,4 +213,4 @@ Transferring 5K from remote
 Uploaded 5K
 
 BUILD SUCCESSFUL
-```
+</pre>

@@ -1,3 +1,8 @@
+---
+title: Building All of Our Java Thali Projects
+layout: default
+---
+
 <dl>
 <dt> Repository Location</td>
 <dd> [[https://thali.codeplex.com/]]
@@ -5,7 +10,7 @@
 <dd> master</dd>
 </dl>
 
-#### Building Libraries 
+# Building Libraries 
 
 <dl>
 <dt> Project Locations</dt>
@@ -23,7 +28,7 @@ To actually do a build:
 
 1. Open the Git bash shell, go to the root of each project (in the order listed above, order matters since they have dependencies on each other) and issue 'gradlew uploadArchives'
 
-#### Building Thali Device Hubs 
+# Building Thali Device Hubs 
 
 <dl>
 <dt> Project Locations</dt>
@@ -37,11 +42,11 @@ Android produces an apk which you can find in Production/ThaliDeviceHub/android/
 
 Java, after a "gradlew distZip" produces Production/ThaliDeviceHub/java/build/distributions/java.zip. Move that zip some place nice, unzip it and then executed from your friendly neighborhood command line 'java.jar'.
 
-#### Notes 
+# Notes 
 
-##### Production/Utilities/UniversalUtilities
+## Production/Utilities/UniversalUtilities
 
-```
+<pre>
 C:\Users\Jon\thali-master\thali\Production\Utilities\UniversalUtilities>gradlew uploadArchives
 Creating properties on demand (a.k.a. dynamic properties) has been deprecated and is scheduled to be removed in Gradle 2.0. Please read http://gradle.org/docs/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html for information on the replacement for dynamic properties.
 Deprecated dynamic property: "source" on "root project 'UniversalUtilities'", value: "[C:\Users\Jon\thali-ma...".:compileJava
@@ -72,11 +77,11 @@ Transferring 54K from remote
 Uploaded 54K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-##### Production/Utilities/AndroidUtilities
+## Production/Utilities/AndroidUtilities
 
-```
+<pre>
 C:\Users\Jon\thali-master\thali\Production\Utilities\AndroidUtilities>gradlew uploadArchives
 Relying on packaging to define the extension of the main artifact has been deprecated and is scheduled to be removed in Gradle 2.0
 WARNING: Dependency org.apache.httpcomponents:httpclient:4.3 is ignored for debug as it may be conflicting with the internal version provided by Android.
@@ -127,11 +132,11 @@ Transferring 4K from remote
 Uploaded 4K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-##### Production/Utilities/JavaUtilities
+## Production/Utilities/JavaUtilities
 
-```
+<pre>
 
 C:\Users\Jon\thali-master\thali\Production\Utilities\JavaUtilities>gradlew uploadArchives
 The ConfigurationContainer.add() method has been deprecated and is scheduled to
@@ -164,11 +169,11 @@ Transferring 0K from remote
 Uploaded 0K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-##### Production/ThaliDeviceHub/Universal
+## Production/ThaliDeviceHub/Universal
 
-```
+<pre>
 C:\Users\Jon\thali-master\thali\Production\ThaliDeviceHub\Universal>gradlew uploadArchives
 Creating properties on demand (a.k.a. dynamic properties) has been deprecated and is 
 scheduled to be removed in Gradle 2.0. Please read 
@@ -197,9 +202,9 @@ Transferring 0K from remote
 Uploaded 0K
 
 BUILD SUCCESSFUL
-```
+</pre>
 
-##### Build executables 
+## Build executables 
 
 <dl>
 <dt> Project Locations</dt>
