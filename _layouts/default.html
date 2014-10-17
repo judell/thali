@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thali</title>
+    {% if page.title != null %}
+    <title>{{ page.title }}</title>
+    {% else %}
+    <title>Ruby Programming Language</title>
+    {% endif %}
   </head>
 
   <body>
