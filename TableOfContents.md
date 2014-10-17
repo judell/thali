@@ -1,6 +1,6 @@
 ---
-title: Thali
-layout: post
+title: Table of Contents
+layout: default
 ---
 
 #### Introduction to Thali 
