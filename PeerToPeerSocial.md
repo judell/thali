@@ -1,6 +1,6 @@
 ---
 title: PeerToPeerSocial
-layout: post
+layout: default
 ---
 
 ##### Managing social connections #####
