@@ -27,7 +27,7 @@ The overview is [here](DeveloperHandbook).
 
 Some key topics linked from the overview:
 
-* [[Android Emulator]]
+* [Android Emulator](AndroidEmulator]
 
 * [[Set up for windows]]
 
@@ -39,7 +39,7 @@ Some key topics linked from the overview:
 
 #### Technology Investigations
 
-A [series](Technology Investigations) on technologies that are used, or might have been used, to create Thali.
+A [series](TechnologyInvestigations) on technologies that are used, or might have been used, to create Thali.
 
 #### Public Events
 
