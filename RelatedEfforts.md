@@ -1,10 +1,15 @@
-#### Mapping the redecentralization movement
+---
+title: Related Efforts
+layout: default
+---
 
-A useful list: [[https://github.com/redecentralize/alternative-internet]]
+# Mapping the redecentralization movement
+
+A useful list: [https://github.com/redecentralize/alternative-internet](https://github.com/redecentralize/alternative-internet)
 
 Let's use this space to work out a taxonomy and identify key Thali allies.
 
-[[https://pinboard.in/u:judell/t:redecentralize/]] is a workspace for classifying projects using multiple facets (tags). (Snapshot of that data [as JSON](http://thali.cloudapp.net/mediawiki/images/6/67/Related-efforts-folksonomy.txt) so there is a record here independent of Jon's Pinboard account.) 
+[https://pinboard.in/u:judell/t:redecentralize/](https://pinboard.in/u:judell/t:redecentralize/) is a workspace for classifying projects using multiple facets (tags). (Snapshot of that data [as JSON](http://thali.cloudapp.net/mediawiki/images/6/67/Related-efforts-folksonomy.txt) so there is a record here independent of Jon's Pinboard account.) 
 
 Here are the tags that have emerged so far:
 
@@ -58,13 +63,13 @@ Notes:
 
 * translucent-identity might be the wrong term, if so I'll rename, it refers to a model where identity is a one-way encrypted hash of a username/password
 
-#### Yaron's original list
+# Yaron's original list
 
-##### Platforms and Apps
+## Platforms and Apps
 
-###### Open Source
+### Open Source
 
-* [[http://www.goland.org/openpeertopeer/]]
+* [http://www.goland.org/openpeertopeer/](http://www.goland.org/openpeertopeer/)
 * [Guardian Project](https://guardianproject.info/apps/)
 * [telehash](http://telehash.org/)
 * [Freedombox](https://freedomboxfoundation.org/)
@@ -81,7 +86,7 @@ Notes:
 * [Ploggy](https://github.com/Psiphon-Labs/ploggy)
 * [Invisible.IM](http://invisible.im/)
 
-###### Commercial
+### Commercial
 
 * [Silent Circle](https://silentcircle.com/)
 * [Blackphone](https://www.blackphone.ch/)
@@ -92,21 +97,21 @@ Notes:
 * [GigaTribe](http://www.gigatribe.com/)
 * [Chadder](http://etransfr.com/products.html)
 
-##### Secure distributed and mesh communication infrastructures
+## Secure distributed and mesh communication infrastructures
 
-###### Open Source
+### Open Source
 
-* [[http://www.goland.org/trafficanalysisopensource/]]
+* [http://www.goland.org/trafficanalysisopensource/](http://www.goland.org/trafficanalysisopensource/)
 * [I2P](https://geti2p.net/en/)
 * [Off-The-Record](https://otr.cypherpunks.ca/)
 * [SILC](http://silcnet.org/info.html)
 * [Peersm](http://www.peersm.com/)
 
-###### Commercial
+### Commercial
 
 * [Open Garden](https://opengarden.com/)
 
-##### Personal Data Store/Vault/Locker (PDX)
+## Personal Data Store/Vault/Locker (PDX)
 
 * [Locker Project](http://lockerproject.org/)
 * [Personal](https://www.personal.com/)
