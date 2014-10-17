@@ -27,7 +27,7 @@ The overview is [here](DeveloperHandbook).
 
 Some key topics linked from the overview:
 
-* [Android Emulator](AndroidEmulator]
+* [Android Emulator](AndroidEmulator)
 
 * [[Set up for windows]]
 
