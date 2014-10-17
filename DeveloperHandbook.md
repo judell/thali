@@ -1,3 +1,9 @@
+---
+title: Developer Handbook
+layout: default
+---
+
+
 # Introduction 
 
 This document is exclusively intended for people who are developing Thali itself. This document is not for those who wish to build apps on top of Thali.
