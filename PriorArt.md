@@ -19,7 +19,7 @@ The [Groove (2007) Security White paper](http://www.nsa.gov/ia/_files/support/Of
 
 ## Identity verification
 
-In the manual scenario, users examine the digital fingerprints of other users’ public keys. Digital fingerprints are hexadecimal strings generated dynamically using a secure hash algorithm (SHA­1, approved by Federal Information Processing Standards) to hash a user’s public keys. Fingerprints are easier for people to read than public keys, yet just as secure. Public keys, which Groove 2007 uses to verify signatures on messages, travel in a user’s contact information. The contact information is a user’s electronic identity; it can be stored in the Groove Public Directory on local directory servers where it’s readily available to other users. Fingerprint based authentication involves contacting the person using an out­of­band means such as a phone call to confirm their fingerprint value is correct.
+In the manual scenario, users examine the digital fingerprints of other users' public keys. Digital fingerprints are hexadecimal strings generated dynamically using a secure hash algorithm (SHA­1, approved by Federal Information Processing Standards) to hash a user's public keys. Fingerprints are easier for people to read than public keys, yet just as secure. Public keys, which Groove 2007 uses to verify signatures on messages, travel in a user's contact information. The contact information is a user's electronic identity; it can be stored in the Groove Public Directory on local directory servers where it's readily available to other users. Fingerprint based authentication involves contacting the person using an out-of-band means such as a phone call to confirm their fingerprint value is correct.
 
 ## Peer to Peer Chapter 18: Security
 
