@@ -12,23 +12,29 @@ You build Thali apps for Android, Windows, Linux, and Mac using HTML5 or native 
 - **Server-optional.** Communicate with peers that may, but need not, live in the cloud.
 
 
-#### Why Thali? 
+# Why Thali? 
 
 Personal devices can store our data, exchange it with trusted peers, and sync to the cloud. For most developers, cloud sync is a given. Thali developers use the cloud when needed, but can alternatively use Thali in peer-to-peer mode. That means app deployment can scale cheaply and users' data can live primarily on devices they control.
 
-#### Thali Scenarios 
+# Thali Scenarios 
 
 **Peer-to-peer social** For conventional social apps that are cloud-based and ad-supported, users' data is a product that's sold. For Thali apps, users are customers who own and control their data. Here are some [scenarios](PeerToPeerSocial).
 
 
 **Secure communication** Thali apps always use mutual SSL authentication, so users know they're always communicating with trusted parties on encrypted channels. And because Thali uses the Tor network, they also know that their communication resists surveillance. Here are some [scenarios](SecureCommunication).
 
-### Who?
+# Who?
+
 Thali is being actively developed by Jason Poon, Jon Udell and Yaron Y. Goland assigned to the Microsoft Open Technologies Hub. We love all sorts of [contributions!](WaysToContribute)
 
-### Table of Contents 
+# Table of Contents 
 
 Please look [here](TableOfContents).
+
+
+
+
+
 
 
 
