@@ -1,6 +1,6 @@
 ---
 title: Secure Communication
-layout: post
+layout: default
 ---
 
 ##### Exchanging medical information 
