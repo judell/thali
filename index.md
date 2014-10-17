@@ -24,11 +24,11 @@ Personal devices can store our data, exchange it with trusted peers, and sync to
 **Secure communication** Thali apps always use mutual SSL authentication, so users know they're always communicating with trusted parties on encrypted channels. And because Thali uses the Tor network, they also know that their communication resists surveillance. Here are some [scenarios](SecureCommunication).
 
 ### Who?
-Thali is being actively developed by Jason Poon, Jon Udell and Yaron Y. Goland assigned to the Microsoft Open Technologies Hub. We love all sorts of [contributions!](Ways-to-Contribute)
+Thali is being actively developed by Jason Poon, Jon Udell and Yaron Y. Goland assigned to the Microsoft Open Technologies Hub. We love all sorts of [contributions!](WaysToContribute)
 
 ### Table of Contents 
 
-Please look [here](AAATableOfContents).
+Please look [here](TableOfContents).
 
 
 
