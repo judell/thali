@@ -1,4 +1,9 @@
-### Building locally, believe me, you want to start here first 
+---
+title: Understanding Thali's Use of Maven
+layout: default
+---
+
+# Building locally, believe me, you want to start here first 
 
 For local development Thali depends on mavenLocal. So go install maven if you haven't already.
 
@@ -16,11 +21,37 @@ When we build locally we use a set of properties in all of our projects to contr
  systemProp.buildJavaWithArtifacts = true
 ```
 
+
+ systemProp.MAVEN_UPLOAD_REPO_URL=http://thaliartifactory.cloudapp.net/artifactory/libs-release-local
+ systemProp.MAVEN_UPLOAD_VERSION=0.0.0
+ systemProp.MAVEN_UPLOAD_USERNAME=user
+ systemProp.MAVEN_UPLOAD_PASSWORD=[The base64 key from artifactory it should start with {DESede} and end with == (usually)]
+ 
+ # These are required by Couchbase
+ systemProp.buildListenerWithArtifacts = true
+ systemProp.buildAndroidWithArtifacts = true
+ systemProp.buildJavaWithArtifacts = true
+
+
+<pre>
+ systemProp.MAVEN_UPLOAD_REPO_URL=http://thaliartifactory.cloudapp.net/artifactory/libs-release-local
+ systemProp.MAVEN_UPLOAD_VERSION=0.0.0
+ systemProp.MAVEN_UPLOAD_USERNAME=user
+ systemProp.MAVEN_UPLOAD_PASSWORD=[The base64 key from artifactory it should start with {DESede} and end with == (usually)]
+ 
+ # These are required by Couchbase
+ systemProp.buildListenerWithArtifacts = true
+ systemProp.buildAndroidWithArtifacts = true
+ systemProp.buildJavaWithArtifacts = true
+</pre>
+
+
+
 Feel free to put junk in USERNAME/PASSWORD. Unless you are publishing to artifactory you don't need it.
 
 I put these values in my global gradle settings file (e.g. on windows this is c:\users\USERNAME\.gradle\gradle.properties) and go on with my day.
 
-### How to manage and configure our Windows Azure Maven Server 
+# How to manage and configure our Windows Azure Maven Server 
 
 These are instructions for configuring your local Maven environment so you can successfully upload to our Maven repository. 
 
