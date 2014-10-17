@@ -1,6 +1,6 @@
 ---
 title: Developer Handbook
-layout: default
+layout: page
 ---
 
 # Introduction 
