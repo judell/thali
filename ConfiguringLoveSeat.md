@@ -1,3 +1,8 @@
+---
+title: Configuring LoveSeat
+layout: page
+---
+
 <dl>
 <dt>Repository Location</dt>
 <dd>[[https://github.com/yaronyg/LoveSeat]]
