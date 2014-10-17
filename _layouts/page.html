@@ -1,5 +1,21 @@
-<p>Begin Page</p>
+<!DOCTYPE html>
+<html>
+ 
+<head>
+ <title>Thali</title>
+ <link rel="stylesheet" type="text/css" href="/thali/stylesheets/stylesheet.css"> 
+ <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css"> 
+</head>
 
-{{ content }}
+<body>
 
-<p>End Page</p>
+<div id="tocd" style="float:left;width:20%;margin-right: 30px">
+  {% include TableOfContents.html %}
+</div>
+  
+<div id="main">
+  {{ content }}
+</div>
+
+</body>
+</html>
