@@ -18,7 +18,7 @@ Personal devices can store our data, exchange it with trusted peers, and sync to
 
 #### Thali Scenarios 
 
-**Peer-to-peer social** For conventional social apps that are cloud-based and ad-supported, users' data is a product that's sold. For Thali apps, users are customers who own and control their data. Here are some [scenarios](Peer-to-peer social).
+**Peer-to-peer social** For conventional social apps that are cloud-based and ad-supported, users' data is a product that's sold. For Thali apps, users are customers who own and control their data. Here are some [scenarios](PeerToPeerSocial).
 
 
 **Secure communication** Thali apps always use mutual SSL authentication, so users know they're always communicating with trusted parties on encrypted channels. And because Thali uses the Tor network, they also know that their communication resists surveillance. Here are some [scenarios](Secure communication).
