@@ -1,6 +1,5 @@
 ---
 title: Thali
-layout: default
 ---
 
 **Thali** is an open-source software platform for creating apps that exploit the power of personal devices and put people in control of their data.
