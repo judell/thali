@@ -1,4 +1,4 @@
-#### Introduction 
+# Introduction 
 
 <dl>
 <dt> Thali's Mission</dt>
@@ -9,9 +9,9 @@ In other words, users should be able to run a web server as easily as they run a
 
 This document is targeted at developers and intended to provide a high level overview of the Thali architecture.
 
-##### Authentication 
+## Authentication 
 
-Running a peer to peer web means accepting incoming connections and this means we need a standardized way to authenticate who is making requests. Thali's answer to this problem is [[Httpkey URL Scheme|Http Key]]. This scheme essentially says:
+Running a peer to peer web means accepting incoming connections and this means we need a standardized way to authenticate who is making requests. Thali's answer to this problem is [Httpkey URL Scheme](HttpkeyURLScheme). This scheme essentially says:
 
 1. Security principals (read: users, but this could also be services, hence the more generic term security principal) are identified with public keys.
 
@@ -21,17 +21,17 @@ There are certainly scenarios where anonymous access is desirable but Thali requ
 
 The use of HttpKey means that Thali doesn't work with the open web as we know it today. That is considered acceptable because as recent events have amply demonstrated the CA model underlying the existing web isn't fit for purpose. As the web develops past this model we expect they will end up adapting something like HttpKey. And, of course, if they come up with something better, we'll adopt that.
 
-##### Firewalls & NATs 
+## Firewalls & NATs 
 
 As a practical matter firewalls and NATs make it between difficult and impossible to host services behind them. The good news is that there are standardized efforts to address these problems, the bad news is that these efforts are either often unsupported by real world firewalls/NATs or not fit for our purposes (e.g. see [here](Stun_Turn_ICE_Investigation). However there is one solution that is free and widely deployed that does meet our needs in many, although not all, cases - [Tor hidden services](https://www.torproject.org/docs/hidden-services.html.en ). So we will be adopting Tor hidden services as our foundational mechanism for exposing server endpoints on devices.
 
-##### Device Discovery 
+## Device Discovery 
 
 Another problem Thali has to address is how does one device find another? In practice user devices change their IP addresses as they switch between network types (e.g. cellular, Wifi, wired) and locations. Traditionally DNS would handle this problem but as a practical matter DNS requires money in order to register a name and faces security challenges that make it problematic (yes, even with DNSSec). However our adoption of Tor hidden services for dealing with Firewall/NATs also provides us with a solution to our discovery problem.
 
 As explained in the link above Tor hidden services allow one to map from a public key hash to a network socket. In other words in Tor hidden services a public key hash plays the same role as a DNS name does in DNS. So users can generate identities and leverages those identities as a discovery mechanism.
 
-##### Synching, CouchDB and well behaved Thali apps 
+## Synching, CouchDB and well behaved Thali apps 
 
 Synching has turned out to be foundational to Thali. There are several reasons for this:
 
@@ -51,7 +51,7 @@ The idea from the get go is that each device would have exactly one CouchDB serv
 
 But once we had the CouchDB server it became quite natural to ask - well what about synching with other user's devices? In the grand tradition of "When all you have is a hammer, everything looks like a nail" it seemed sort of obvious to use the CouchDB server as the primary communication mechanism. That is any Thali apps that need asynchronous high latency communication (e.g. our previous list above) can do so through the CloudDB instance. So the idea is that the Thali App tells the singleton CloudDB service to either allow certain public keys (aka Security Principals) to synch certain data and/or for the CloudDB server to pull data from remote CloudDB services.
 
-##### Architecture Overview 
+## Architecture Overview 
 
 <dl>
 <dt> Thali Device Hub</dt>
@@ -79,9 +79,9 @@ But once we had the CouchDB server it became quite natural to ask - well what ab
 
 ```
 
-##### Talking to the  Thali Device Hub 
+## Talking to the  Thali Device Hub 
 
-For now, mostly to make things easy, all communication between an application and the CouchDB instance on the same device will occur via the network using localhost. This means, amongst other things, that a [[Httpkey URL Scheme |httpkey URL]] will be used. Yes, it means that we will be running a full SSL stack locally. Yes this is a bit silly and some platforms provide much better tools to handle this. But for right now the simplicity of using the same stack locally and remotely is worth the inefficiency.
+For now, mostly to make things easy, all communication between an application and the CouchDB instance on the same device will occur via the network using localhost. This means, amongst other things, that a [httpkey URL](HttpkeyURLScheme) will be used. Yes, it means that we will be running a full SSL stack locally. Yes this is a bit silly and some platforms provide much better tools to handle this. But for right now the simplicity of using the same stack locally and remotely is worth the inefficiency.
 
 This means that any application that wants to talk to the CouchDB singleton service from Thali needs to:
 
@@ -91,7 +91,7 @@ This means that any application that wants to talk to the CouchDB singleton serv
 
 How this works in practice will depend on the specific OS.
 
-###### Access control on the Thali Device Hub 
+### Access control on the Thali Device Hub 
 
 Each database will have associated with it a Read ACL and a Write ACL. Anyone with a write ACL on a database is allowed to create views on that database.
 
@@ -99,7 +99,7 @@ Each view will have associated with it a Read ACL.
 
 ACL membership will either be individual principals or groups. Both principals and groups will be stored in a DB in the Thali Device Hub.
 
-###### Replication - The Replication Service 
+### Replication - The Replication Service 
 
 For now any database created on a device will be replicated to all other devices by the replication service. Due to the often unique requirements of Thali replication including handling disconnected remote entities, Tor, httpkey, quotas, etc. we will almost certainly have our own bespoke replication service rather than try to use the replication service built into CouchDB.
 
@@ -107,7 +107,7 @@ For now all replication will be 'last writer wins'. That is, if there is a confl
 
 None of this is enough of course. We will inevitably need databases that are local only, that have different conflict resolution policies, that deal with quotas (which we aren't going to implement immediately), etc. But one step at a time.
 
-###### Discovering users 
+### Discovering users 
 
 An obvious question is - how the heck do people communicate? Are folks supposed to memorize 4k RSA keys? Or maybe just the hashes? In general we expect discovery to happen in a number of ways:
 
@@ -136,23 +136,23 @@ An obvious question is - how the heck do people communicate? Are folks supposed 
 
 We will be providing a standard JSON format hosted in the Thali Device Hub where a user can provide information about themselves that they want to publish. This will include things like their messaging endpoint (e.g. where they can receive unsolicited messages).
 
-##### Thali Device Hub #####
+## Thali Device Hub 
 
-###### Picking the server 
+### Picking the server 
 
 We are starting off with CouchBase Lite for Android. But there should be an update soon to that code base to allow for an interface that can swap out the database and logging layers. This enables us to make CouchbaseLite for Android into a generic Java project!!!!
 
-###### UX 
+### UX 
 
 There is some common UX that the Thali Device Hub needs to support. Minimally it will need a UX to handle pairing devices as well as exchanging keys with friends. It will need some kind of status page to help users when things go wrong. It will probably also need some kind of storage management UX to deal with stores that get too big.
 
 Because we want to run on multiple environments (Android and Java) and multiple form factors we are going for a HTML based UX as our base UX for the device hub. See later on in this article for more on how we want to handle HTML.
 
-###### Quick specs for components of the Thali Device Hub 
+### Quick specs for components of the Thali Device Hub 
 
 [[TDH Replication Manager]]
 
-##### Thali Application 
+## Thali Application 
 
 A Thali Application is a web application and so it's expected to be able to talk both directly to other Thali Device Hubs (and potentially other Thali Applications if they want to expose a direct server interface) as well as to its local Thali Device Hub. The protocol in all cases is the same, HTTP over TLS. Yes, even local Thali Apps talk to their local Thali Device Hub that way. We might eventually provide another mechanism for local to local communication but for now we want to keep things simple.
 

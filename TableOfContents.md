@@ -3,25 +3,25 @@ title: Table of Contents
 layout: default
 ---
 
-#### Introduction to Thali 
+# Introduction to Thali 
 
-[[Home]]
+[Home](index)
 
-[[Related Efforts]]
+[Related Efforts](RelatedEfforts)
 
-[[Prior Art]]
+[Prior Art](PriorArt)
 
-#### Architecture 
+# Architecture 
 
-[[Thali and Couch]]
+[Thali and Couch](ThaliAndCouch)
 
-[[Httpkey URL Scheme]]
+[Httpkey URL Scheme](HttpkeyURLScheme)
 
-[[Thaligroup URL Scheme]]
+[Thaligroup URL Scheme](ThaligroupURLScheme)
 
-[[TDH Replication Manager]]
+[TDH Replication Manager](TDHReplicationManager)
 
-#### Developer Handbook
+# Developer Handbook
 
 The overview is [here](DeveloperHandbook).
 
@@ -29,19 +29,19 @@ Some key topics linked from the overview:
 
 * [Android Emulator](AndroidEmulator)
 
-* [[Set up for windows]]
+* [Setup for windows](SetupForWindows)
 
-* [[Understanding Thalis Use of Maven]]
+* [Understanding Thali's Use of Maven](UnderstandingThalisUseOfMaven)
 
-* [[Thali Guide to Git]]
+* [Thali Guide to Git](ThaliGuideToGit)
 
-* [[Guide to Debugging]]
+* [Guide to Debugging](GuideToDebugging)
 
-#### Technology Investigations
+# Technology Investigations
 
 A [series](TechnologyInvestigations) on technologies that are used, or might have been used, to create Thali.
 
-#### Public Events
+# Public Events
 
 [[The Thali PPNet demo]] 
 
