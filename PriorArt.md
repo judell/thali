@@ -7,7 +7,7 @@ layout: default
 
 ## Microsoft Office Groove Security Architecture 
 
-The [Groove (2007) Security White paper](http://www.nsa.gov/ia/_files/support/Office_Groove_Security_White_Paper.pdf) describes Groove&#39;s security architecture at a high level. Excerpts:
+The [Groove (2007) Security White paper](http://www.nsa.gov/ia/_files/support/Office_Groove_Security_White_Paper.pdf) describes Groove's security architecture at a high level. Excerpts:
 
 ## From the overview
 
@@ -19,9 +19,9 @@ The [Groove (2007) Security White paper](http://www.nsa.gov/ia/_files/support/Of
 
 ## Identity verification
 
-In the manual scenario, users examine the digital fingerprints of other users&#39; public keys. Digital fingerprints are hexadecimal strings generated dynamically using a secure hash algorithm (SHA­1, approved by Federal Information Processing Standards) to hash a user&#39;s public keys. Fingerprints are easier for people to read than public keys, yet just as secure. Public keys, which Groove 2007 uses to verify signatures on messages, travel in a user&#39;s contact information. The contact information is a user&#39;s electronic identity; it can be stored in the Groove Public Directory on local directory servers where it&#39;s readily available to other users. Fingerprint based authentication involves contacting the person using an out-of-band means such as a phone call to confirm their fingerprint value is correct.
+In the manual scenario, users examine the digital fingerprints of other users' public keys. Digital fingerprints are hexadecimal strings generated dynamically using a secure hash algorithm (SHA­1, approved by Federal Information Processing Standards) to hash a user's public keys. Fingerprints are easier for people to read than public keys, yet just as secure. Public keys, which Groove 2007 uses to verify signatures on messages, travel in a user's contact information. The contact information is a user's electronic identity; it can be stored in the Groove Public Directory on local directory servers where it's readily available to other users. Fingerprint based authentication involves contacting the person using an out-of-band means such as a phone call to confirm their fingerprint value is correct.
 
 ## Peer to Peer Chapter 18: Security
 
-We have asked permission to reprint [the chapter](http://my.safaribooksonline.com/book/technology-management/059600110x/iiidot-technical-topics/ch18-1-fm2xml) on Groove&#39;s cryptographic mechanisms.
+We have asked permission to reprint [the chapter](http://my.safaribooksonline.com/book/technology-management/059600110x/iiidot-technical-topics/ch18-1-fm2xml) on Groove's cryptographic mechanisms.
 
