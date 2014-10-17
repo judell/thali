@@ -20,7 +20,7 @@ We have our own custom version of the entire CouchBase Lite stack that has a var
 
 To actually do a build:
 
-1. Follow the instructions in [[Understanding Thalis Use of Maven]]
+1. Follow the instructions in [Understanding Thali's Use Of Maven](UnderstandingThalisUseOfMaven)
 
 1. Open the Git bash shell, go to the root of each project (in the order listed above, order matters since they have dependencies on each other) and issue 'gradlew installAll'
 

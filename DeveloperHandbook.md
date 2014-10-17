@@ -1,14 +1,14 @@
-#### Introduction 
+# Introduction 
 
 This document is exclusively intended for people who are developing Thali itself. This document is not for those who wish to build apps on top of Thali.
 
-#### FIRST THING 
+# FIRST THING 
 
 Go off to [[https://github.com/thaliproject/]] and after you login with your GitHub account please go to each of the projects and hit 'watch'. We don't send out emails with notifications of PRs, issues, builds, etc. We use GitHub for that. So you need to be set up to watch (and make sure your settings at GitHub are that you should be emailed when a watch even happens) or you will miss what's going on.
 
 Next go [here](https://www.pivotaltracker.com/n/projects/1163162). That is where we keep our backlog. If you are officially part of the project then go bug Yaron to set up an account for you so you can be assigned items. By default however it is world readable so anyone can track what we are up to.
 
-#### Code Lay out 
+# Code Lay out 
 
 Our first dependency is Tor_Onion_Proxy_Library. It contains three sub-projects, universal, java and android. Most of the code lives in universal who builds a JAR that then the java and android projects depend on. The java project then produces a Jar apps can use to enable themselves with Tor and android produces an AAR for the same purpose.
 
@@ -54,11 +54,11 @@ The thali-addressbook depo is actually a fork of the ThaliHTML5ApplicationFramew
 
 Please note that we have standardized on gradle for our build environment and that no IDE specific code is to be checked in.
 
-#### Instructions for building our repositories 
+# Instructions for building our repositories 
 
 We publish releases and binaries so this section is only needed for people who are actually developing Thali so they can make changes locally.
 
-##### Using the global build script to build the TDH 
+## Using the global build script to build the TDH 
 
 The most sane way to handle things until we have Jenkins automating our builds is to use the global build script. To do this one has to:
 
@@ -74,35 +74,35 @@ This will build everything the TDHs need including the Tor library, all the couc
 
 It's worth looking at thali\Production\build.gradle as it contains various useful options including ones to turn off tests and do global cleans.
 
-##### Building the Thali HTML 5 framework and the address book 
+## Building the Thali HTML 5 framework and the address book 
 
 Since one is a fork of the other they both build in the same way. You need to go to "ThaliHTML5ApplicationFramework\gradlew buildAll" and everything will be built. Note that the Android build takes 2 or 3 minutes. So during development I'll typically just call "ThaliHTML5ApplicationFramework\gradlew :java:installApp" to save time.
 
-##### Building our Java/Android Projects 
+## Building our Java/Android Projects 
 
 Make sure to review these links as they have all sorts of annoying bits of information needed to actually build things.
 
-[[Understanding Thalis Use of Maven]]
+[Understanding Thali's Use of Maven](UnderstandingThalisUseOfMaven)
 
-[[Building all of our CouchBase Dependencies]]
+[Building All Of Our CouchBase Dependencies](BuildingAllOfOurCouchBaseDependencies)
 
-[[Building all of our Java Thali Projects]]
+[Building All Of Our Java Thali Projects](BuildingAllOfOurJavaThaliProjects)
 
-##### Building our .net Projects 
+## Building our .net Projects 
 
 The code here hasn't had much love recently so this section should be considered historical.
 
-[[Configuring LoveSeat]]
+[Configuring LoveSeat](ConfiguringLoveSeat)
 
-[[Building our .net Projects]]
+[Building our .net Projects](BuildingOurDotNetProjects)
 
-##### Building our Javascript Projects 
+## Building our Javascript Projects 
 
 Right now we are using stock PouchDB. We just keep this section around if we have to remember how we used to build our own version.
 
-[[Configuring PouchDB]]
+[Configuring PouchDB](ConfiguringPouchDB)
 
-#### Dev Machine Set Up 
+# Dev Machine Set Up 
 
 We need a bunch of software. We use IntelliJ Ultimate Edition although I'm told that the (free) community edition supports what we do just fine. In addition one needs the latest JDK, latest Android SDK, a local maven installation, gradle and a decent android emulator and/or device.
 
@@ -110,23 +110,20 @@ We have a bunch of instructions on how to get this software for Windows, see [[s
 
 NOTE: EVEN IF YOU AREN'T RUNNING ON WINDOWS STILL READ THE [[set up for windows]] BECAUSE IT CONTAINS IMPORTANT CONFIGURATION INSTRUCTIONS THAT APPLY TO ALL PLATFORMS
 
-#### Git 
+# Git 
 
-[[Thali Guide to Git]] has a bunch of information about how we use git but anyone who has used git regularly isn't going to find anything new there.
+The [Thali Guide to Git](ThaliGuideToGit) has a bunch of information about how we use git but anyone who has used git regularly isn't going to find anything new there.
 
-#### Debugging ####
+# Debugging #
 
-Please see [[Guide to Debugging]] for more information than you could ever want on how debugging works across our various dependencies.
+Please see the [Guide to Debugging](GuideToDebugging) for more information than you could ever want on how debugging works across our various dependencies.
 
-#### Virtual Box 
+# Virtual Box 
 
 Just install the latest from [here](https://www.virtualbox.org/wiki/Downloads). It automatically updates itself anyway so I don't worry about what version I'm running.
 
-#### Android Emulator (that isn't glacially slow) 
+# Android Emulator (that isn't glacially slow) 
 
-See [[AndroidEmulator]]
+See [Android Emulator](AndroidEmulator)
 
-#### Application Development in Thali 
-
-See [[Application Development in Thali]]
 
