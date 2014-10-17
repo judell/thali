@@ -29,6 +29,10 @@ h1 {
   font-weight: bold;
 }
 
+h1.PageTitle {
+text-align:center;
+}
+
 h2 {
   font-size: 20px;
   line-height: 24px;
