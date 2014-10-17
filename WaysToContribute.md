@@ -1,6 +1,6 @@
 ---
 title: Ways to Contribute
-layout: post
+layout: default
 ---
 
 (Shamelessly stolen from the [RX team's contribute page](https://rx.codeplex.com/wikipage?title=Contributing))
