@@ -1,1 +1,4 @@
-The new page.
+---
+title: A New Page
+layout: default
+---
