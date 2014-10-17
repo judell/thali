@@ -13,7 +13,7 @@ Let's use this space to work out a taxonomy and identify key Thali allies.
 
 Here are the tags that have emerged so far:
 
-```
+<pre>
 ad-hoc-networking
 algorithm
 app
@@ -51,7 +51,7 @@ webrtc
 wiki
 wire-encryption
 xdi
-```
+</pre>
 
 Notes:
 

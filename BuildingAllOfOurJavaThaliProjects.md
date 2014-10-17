@@ -4,8 +4,8 @@ layout: default
 ---
 
 <dl>
-<dt> Repository Location</td>
-<dd> [[https://thali.codeplex.com/]]
+<dt> Repository Location</dt>
+<dd> [https://thali.codeplex.com/](https://thali.codeplex.com/)</dd>
 <dt> Branch</dt>
 <dd> master</dd>
 </dl>
