@@ -1,3 +1,8 @@
+---
+title: Building All of Our Java Thali Projects
+layout: default
+---
+
 # Introduction 
 
 <dl>
@@ -61,23 +66,23 @@ But once we had the CouchDB server it became quite natural to ask - well what ab
 <dd> A local application running on the same device as a Thali Device Hub</dd>
 </dl>
 
-```
-                         -------------------------------------------------------------------
-                         |                    Thali Device Hub                             |
-                         |                                                                 |
-   [Local Thali App] --> |[Local CouchDB Singleton Service] <-- [Local Replication Manager]|
-                         |           /-\                                    |              |
-                         |            |                                     |              |
-                         |            |                                     |              |
-                         |            |                                     |              |
-                         | [Local Tor Hidden Service Proxy]        [Local Tor Client]      |
-                         -------------|-------------------------------------|---------------
-                                      |                                     |
-                          [Tor Hidden Service Infrastructure]               |
-                                      |                                    \_/
-                           [Remote Authorized Entities]         [Remote Authorized Entities]
+<pre>
+   		     -------------------------------------------------------------------
+		     |                    Thali Device Hub                             |
+		     |                                                                 |
+[Local Thali App] -->|[Local CouchDB Singleton Service] <-- [Local Replication Manager]|
+		     |           /-\                                    |              |
+		     |            |                                     |              |
+		     |            |                                     |              |
+		     |            |                                     |              |
+		     | [Local Tor Hidden Service Proxy]        [Local Tor Client]      |
+		     -------------|-------------------------------------|---------------
+				  |                                     |
+		      [Tor Hidden Service Infrastructure]               |
+				  |                                    \_/
+		       [Remote Authorized Entities]         [Remote Authorized Entities]
 
-```
+</pre>
 
 ## Talking to the  Thali Device Hub 
 
@@ -114,7 +119,7 @@ An obvious question is - how the heck do people communicate? Are folks supposed 
 <dl>
 
 <dt> Email</dt>
-<dd> Yes, email. Seriously. No it's not secure. But it's not quite as insecure as it sounds. We expect Thali to encourage (in reasonable situations) different users to compare notes on the identities they know. This includes fun things like comparing [http://www.erights.org/elib/capability/pnml.html pet names]. So in most cases if someone does a MITM on the identity exchange it will eventually be discovered.</dd>
+<dd> Yes, email. Seriously. No it's not secure. But it's not quite as insecure as it sounds. We expect Thali to encourage (in reasonable situations) different users to compare notes on the identities they know. This includes fun things like comparing [pet names](http://www.erights.org/elib/capability/pnml.html). So in most cases if someone does a MITM on the identity exchange it will eventually be discovered.</dd>
 
 <dt> In person with QRCodes</dt>
 <dd> This involves two users who want to exchange identities having their devices display QRCodes and then pointing their device's cameras at each other. On balance this is probably the most secure way to exchange identities.</dd>
@@ -150,7 +155,7 @@ Because we want to run on multiple environments (Android and Java) and multiple 
 
 ### Quick specs for components of the Thali Device Hub 
 
-[[TDH Replication Manager]]
+[TDH Replication Manager](TDHReplicationManager)
 
 ## Thali Application 
 

@@ -5,9 +5,9 @@ layout: default
 
 <dl>
 <dt> Repository Location</dt>
-<dd> [https://thali.codeplex.com/](https://thali.codeplex.com/)</dd>
-<dt> Branch</dt>
-<dd> master</dd>
+<dd> [https://thali.codeplex.com/](https://thali.codeplex.com/) </dd>
+<dt> Branch </dt>
+<dd> master </dd>
 </dl>
 
 # Building Libraries 
