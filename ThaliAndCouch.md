@@ -1,5 +1,5 @@
 ---
-title: Building All of Our Java Thali Projects
+title: Thali and Couch
 layout: default
 ---
 
