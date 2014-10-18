@@ -4,12 +4,17 @@ overflow-x:auto;
 }
 
 dt {
-font-weight: bold;
+  font-weight: bold;
+  #text-decoration: underline;
+  border-bottom: 6px solid white
+ }
+dt:after {
+  content:":"
 }
-
 dd {
-margin-left: 2%;
-}
+ border-left: 20px solid white;
+ line-height: .3
+ }
 
 
 /* General */
