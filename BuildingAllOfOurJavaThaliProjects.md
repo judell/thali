@@ -17,7 +17,7 @@ layout: default
 <dd> Production/Utilities/UniversalUtilities</dd>
 <dd> Production/Utilities/AndroidUtilities</dd>
 <dd> Production/Utilities/JavaUtilities </dd>
-<dd Production/ThaliDeviceHub/Universal</dd>
+<dd> Production/ThaliDeviceHub/Universal</dd>
 </dl>
 
 The previous all produce libraries. So they are built as given below.
