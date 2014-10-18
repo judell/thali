@@ -6,7 +6,7 @@ layout: default
 <dl>
 <dt> Repository Location</dt>
 <dd>
-[Main Thali repository](http://github.com/thaliproject/thali)
+<a href="http://github.com/thaliproject/thali">Main Thali repository</a>
 </dd>
 <dt>Branch</dt>
 <dd>master</dd>
