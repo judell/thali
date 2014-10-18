@@ -1,3 +1,17 @@
+pre {
+width:1000px;
+overflow-x:auto;
+}
+
+dt {
+font-weight: bold;
+}
+
+dd {
+margin-left: 2%;
+}
+
+
 /* General */
 
 *, *:before, *:after {
@@ -131,11 +145,6 @@ h1, h2, h3, h4, p, li, dt, dd, a, code, pre {
   word-wrap: break-word;
   overflow-wrap: break-word;
   margin-bottom: 8px;
-}
-
-pre {
-width:1000px;
-overflow-x:auto;
 }
 
 code {
