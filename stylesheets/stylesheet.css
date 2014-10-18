@@ -133,6 +133,11 @@ h1, h2, h3, h4, p, li, dt, dd, a, code, pre {
   margin-bottom: 8px;
 }
 
+pre {
+width:1000px;
+overflow-x:auto;
+}
+
 code {
   margin: 0 2px;
   padding: 0px 5px;
