@@ -131,12 +131,14 @@ An obvious question is - how the heck do people communicate? Are folks supposed 
 
 <dd> This is really just meant when trying to add a device without a camera to one's personal device mesh, think of an old PC. In that case a password can be displayed that can be typed in to the other device and used to bootstrap the actual authentication process.</dd>
 
-<dt> Via Groups<dt>
+<dt> Via Groups</dt>
 
 <dd> We expect that it will be normal for people to share group membership data with their friends and that this data will be stored, compared and made available for discovering new identities.</dd>
 
 <dt> Directories</dt>
+
 <dd> In certain scenarios, corporations are an obvious one, a user might have a directory of identities it trusts within a particular context. E.g. if I'm going to communicate to someone at work and the corporate directory says what their key is then I'm going to trust it.</dd>
+
 </dl>
 
 We will be providing a standard JSON format hosted in the Thali Device Hub where a user can provide information about themselves that they want to publish. This will include things like their messaging endpoint (e.g. where they can receive unsolicited messages).
