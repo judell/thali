@@ -145,7 +145,7 @@ dl dt {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, p, li, dt, dd, a, code, pre {
+h1, h2, h3, h4, p, li, dt, dd, a, code {
   word-wrap: break-word;
   overflow-wrap: break-word;
   margin-bottom: 8px;
