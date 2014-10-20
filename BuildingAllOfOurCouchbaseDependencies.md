@@ -29,7 +29,6 @@ To actually do a build:
 
 1. Open the Git bash shell, go to the root of each project (in the order listed above, order matters since they have dependencies on each other) and issue 'gradlew installAll'
 
-<hr>
 
 # Notes 
 
