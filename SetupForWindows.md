@@ -1,4 +1,10 @@
-#### Setting System Properties On Windows 
+---
+title: Setup for Windows
+layout: default
+---
+
+
+# Setting System Properties On Windows 
 
 Just about all the software we use depends on a variety of environment variables in order to work. So I'm writing here how to set those environment variables generically. That way whenever the code says 'set environment X to Y' you can refer to this section on how. This text is for Windows 7. Presumably Windows 8 is similar.
 
@@ -36,7 +42,7 @@ To add to path:
 
 Existing cmd windows won't pick up the new variables so you need to close existing windows and open new ones to get the new values.
 
-#### What variables paths do you need? 
+# What variables paths do you need? 
 
 I am going to try my best to capture all of them in the instructions below. But I looked through my own environmental variables and here is what I found so far:
 
@@ -52,7 +58,7 @@ I am going to try my best to capture all of them in the instructions below. But 
 
 </dl>
 
-#### Java for Windows
+# Java for Windows
 
 1. Go [here](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and click on the download button under JDK
 
@@ -64,7 +70,7 @@ Set JAVA_HOME, the path is usually something like: C:\Program Files (x86)\Java\j
 
 [Note: The latest Android studio gets really unhappy if you don't have JAVA_HOME pointing to 64 bit Java. So I'm now experimenting with that too.]
 
-#### Maven for Windows 
+# Maven for Windows 
 
 We are currently using Maven 3.1.1. Please go [here](http://maven.apache.org/download.cgi) and download the binary zip. Unzip the file and put the unzipped directory (e.g. apache-maven-3.1.1) under C:\Program Files (x86). Then create a system variable MAVEN_HOME that points to c:\Program Files (x86)\apache-maven-3.1.1. Then add to the end of your path "%MAVEN_HOME%\bin".
 
@@ -72,14 +78,14 @@ However there is one thing worth knowing about how Maven works locally and that 
 
 As of March 2014 Maven is at 3.2.1.
 
-As per [[http://stackoverflow.com/questions/17136324/what-is-the-difference-between-m2-home-and-maven-home]], M2_HOME supercedes MAVEN_HOME for Maven 2.
+As per [http://stackoverflow.com/questions/17136324/what-is-the-difference-between-m2-home-and-maven-home](http://stackoverflow.com/questions/17136324/what-is-the-difference-between-m2-home-and-maven-home), M2_HOME supercedes MAVEN_HOME for Maven 2.
 
 To validate the install, mvn --version.
 
-#### Gradle for Windows 
+# Gradle for Windows 
 
 Since we use gradle wrappers there is no need to install gradle on your machine. Stuff should 'just work'.
-#### Android for Windows 
+# Android for Windows 
 
 We are constantly changing SDKs. Our base SDK version is 18 but we are currently building with 19 and I'm sure that will change. So just install the latest Android SDK from [here](http://developer.android.com/sdk/installing/studio.html). Make sure to create a system variable ANDROID_HOME and set it to something like C:\Program Files (x86)\Android\android-studio\sdk. Then add to the end of your path ";%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools".
 
@@ -100,6 +106,6 @@ Note that you may have to go through the install and/or delete Packages process 
 
 I'm sure the specific numbers above will be out of date soon but the process should work so when you get errors about not having the right versions of whatever use the approach above to fix it.
 
-#### Visual Studio for Windows 
+# Visual Studio for Windows 
 
 You need to install the latest community edition of Visual Studio or you won't be able to build couchbase-lite-java-native.
