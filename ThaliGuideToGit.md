@@ -47,9 +47,9 @@ Go back to the [Git book](http://git-scm.com/book) and re-read the section on br
 
 To create a new branch issue: 
 
-<pre>
+```
  git checkout -b [name]
-</pre>
+```
 
 To switch to an existing branch issue: 
 
@@ -76,15 +76,15 @@ First, you want to commit those changes on your local repository. To do that I f
 
 To rollback a file: 
 
-<pre>
+```
  git checkout -- [name of file]
-</pre>
+```
 
 To stage an unstaged file either select it in the Git Gui 'unstaged changes' section and hit commit->staged to commit or go to the command line and issue: 
 
-<pre>
+```
  git add [file]
-</pre>
+```
 Note that if you accidentally staged a file you hadn't intended to you can use the UX (commit->unstage from commit) to remove it from staging.
 
 If you make changes to file state in Bash when the Gui is open, have no fear, just hit the 'rescan' button and the Gui will update itself.
@@ -97,21 +97,21 @@ Now you have pushed your changes to your depot and they are backed up remotely!
 
 Note, btw, that if you don't like using the GUI another way to make this work is from the Git Bash Shell.
 
-<pre>
+```
  git status
-</pre>
+```
 
 This will show you what's going on in your repository, which files are staged, which aren't and how they have changed.
 
-<pre>
+```
  git commit -a
-</pre>
+```
 
 This is a blind command to stage everything that is unstaged. Obviously be careful. This will also open up a VI editor to let you write in a commit message. Move your cursor to the top of the screen using arrow keys and press 'i' to insert and type text. When you are done hit 'esc' to exit insert mode and type ':wq' to save out your changes and exit.
 
-<pre>
+```
  git push origin master
-</pre>
+```
 
 This will upload your changes to your forked repository. You will need your name and password.
 
@@ -121,17 +121,17 @@ Merging is one of the hazards of doing development and good tools are essential.
 
 You have to tell Git to use P4merge as your merge tool. To do that issue these commands taken from [http://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool here](http://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool here):
 
-<pre>
+```
  git config --global merge.tool p4merge
  git config --global mergetool.p4merge.cmd 'p4merge.exe \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"'
-</pre>
+```
 
 WARNING: I used the above without incident on Windows 7 but when I moved over to Windows 8.1 I ran into errors, apparently because of the quoting. So on Windows 8, per [http://stackoverflow.com/questions/866262/p4merge-error-git](http://stackoverflow.com/questions/866262/p4merge-error-git) I use:
 
-<pre>
+```
  git config --global merge.tool p4merge
  git config --global mergetool.p4merge.cmd 'p4merge $BASE $LOCAL $REMOTE $MERGED'
-</pre>
+```
 
 Note however that the person who put up the stack overflow answer said they needed to remote the quotes on Windows 7. So your mileage may vary.
 
@@ -141,32 +141,32 @@ Hopefully there are multiple developers working on the upstream repository and c
 
 This process is intentionally manual so that your code doesn't change unexpectedly underneath you!
 
-<pre>
+```
  git fetch upstream
-</pre>
+```
 
 This will cause all changes in the upstream repository to be copied down to the local cloned repository of your fork. But those changes are just sitting in a hidden subdirectory. Nothing has actually happened with them yet.
 
-<pre>
+```
  git merge upstream/master
-</pre>
+```
 
 The above command tests your understanding of branches. When you issued 'git fetch upstream' you pulled down all changes on all branches from the upstream repository. The second command, git merge upstream/master, says to apply changes specifically from the master branch. It's possible in some cases you will want to apply changes from other branches, but not likely for now.
 
 Git does its best to resolve any conflicts but if it can't figure a conflict out then it will throw a merge error.
 
-<pre>
+```
  git mergetool
-</pre>
+```
 
 This will start to walk you through various kinds of conflicts and ask you to resolve them. In the case of file version conflicts it will start up your merge tool (which you configured above).
 
 Note that mergetool generally can only handle text conflicts, not binary conflicts. To handle binary conflicts I use:
 
-<pre>
+```
  git checkout --[ours || theirs] [conflicted file]
  git add [conflicted file]
-</pre>
+```
 
 This tells the system to either pick "--ours" or "--theirs" and to add that file.
 
@@ -197,36 +197,36 @@ An example of this situation is CouchBase Lite. I have a branch of their depots 
 
 This looks as follows:
 
-<pre>
+```
  git checkout -b issue36
-</pre>
+```
 
 This creates and switches to a new branch, issue36, which is the issue that I'm resolving in this example.
 
-<pre>
+```
  git fetch upstream [Note: I need to experiment to see if this command is really necessary]
  git reset upstream/master
-</pre>
+```
 
 These commands pull down the latest stream of the upstream depo and then resets my state for this branch to be identical. So I am now dealing with what should be an identical copy to the state of the upstream master branch.
 
-<pre>
+```
  Edit Stuff
-</pre>
+```
 
 Now I edit whatever files I need for the pull request. In the case of issue 36 this was a minor change to the build.gradle file.
 
-<pre>
+```
  git add [new stuff]
  git commit
  git push origin issue36
-</pre>
+```
 
 Now I issue commands like git add to add any files that aren't tracked and do a local commit. Usually I handle this part, where I've finished making my changes and want to commit in preparation for the pull request, using the Git GUI using the commit/push routine.
 
-<pre>
+```
  Go to github and issue the Pull Request!
-</pre>
+```
 
 And we are done!
 
@@ -234,48 +234,48 @@ And we are done!
 
 In most cases I need to make tiny changes to existing libraries to add new features or fix bugs. In this case I typically want to submit all of my changes in the pull request. This is different than above where I have a tidal wave of changes in my branch but only want to submit a tiny subset in the pull request.
 
-<pre>
+```
  git fetch upstream
  git merge upstream/master
  git mergetool
-</pre>
+```
 
 Most of the time these commands do nothing as I'm usually already in synch with the upstream repo. But if not this is good hygiene to do before a pull request so you make sure you aren't about to submit code that is behind the upstream. But once I'm done my branch is now fully sync'd and up to date with the master as well as having any of my changes on top.
 
-<pre>
+```
  git checkout -b proposal
-</pre>
+```
 
 I now create a new branch from which I will make the pull request.
 
-<pre>
+```
  git rebase upstream/master
-</pre>
+```
 
 This command takes all the commits I've created and resets them to be ahead of the HEAD of the upstream's master branch. This will set up me up to make a clean pull request by making sure that my history comes after whatever has gone on in upstream. A command like this would be a screaming nightmare in the case of CouchBase because I have so many changes trying to dig through them all to find what I want to submit and getting rid of everything else would be error prone and take forever. So in CouchBase's case it's easier to just copy over what I need. But for lots of other forks the changes are small and I want to submit them all. So with this command all my changes are now teed up quite nicely.
 
-<pre>
+```
  git add [stuff]
  git commit
-</pre>
+```
 
 These commands will add my changes from the current state of the master branch as a commit on the local branch. But in some cases I don't need these commands. The reason is that I often check in my changes to my origin for safe keeping. If the upstream hasn't changed since those commits then the rebase above doesn't do anything.
 
-<pre>
+```
  git rebase -i HEAD~N
-</pre>
+```
 
 This command is needed in the case that I have committed changes to origin. In that case I now have a visible history to deal with. The folks getting the pull request aren't going to be particularly interested in my history making a mess of their history. So I want to crunch down my history to a single commit. That's what this command lets me do. I check (usually using the history function in the GIT GUI) how many commits I have and enter that number in N. I then leave the first entry in VI alone and mark all the other entries with either a f (if I want to lose the commit statements) or a s (if I want to keep those commit statements). 
 
-<pre>
+```
  git push origin proposal
-</pre>
+```
 
 I use the GIT GUI here normally but this is the point where I check in my pull branch to my depot.
 
-<pre>
+```
  Go to github and issue the Pull Request!
-</pre>
+```
 
 And we are done!
 
