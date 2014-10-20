@@ -1,4 +1,4 @@
----
+ï»¿---
 title: Httpkey URL Scheme
 layout: default
 ---
@@ -33,9 +33,9 @@ All key-type values MUST be registered with IANA following <code>[insert appropr
 
 <pre>
  rsa-key-type = "rsapublickey"
- rsa-key-value = exponent ‘.’ modulus
+ rsa-key-value = exponent â€˜.â€™ modulus
  exponent = The exponent of the key represented as an ASCII encoded integer (e.g. 12345...)
- modulus = Same as exponent but instead encoding the RSA key’s modulus
+ modulus = Same as exponent but instead encoding the RSA keyâ€™s modulus
 </pre>
 
 Httpkey URL validation with a RSA public key occurs by extracting the exponent and modulus for the public key presented in the X.509 cert presented in the TLS connection and comparing the integer values with the value recorded in the rsapublickey argument in the httpkey URL.
@@ -79,7 +79,7 @@ This httpkey URL is used to talk to a Thali Device Hub's addressbook database. P
 
 No. We need to go through the HTTP and HTTPS specs with a microscope and figure out all the places that things are underspecified. For example, if someone connects via a httpkey URL should they accept a redirect to a non-httpkey URL? What if the redirect is to a httpkey URL but with a different key? Etc.
 
-## Don’t we need requirements for the accepted configuration parameters for TLS? 
+## Donâ€™t we need requirements for the accepted configuration parameters for TLS? 
 
 Yes. I intend to expand the spec to identify allowable algorithms, key sizes, etc. But right now I just want to get something running.
 
@@ -89,9 +89,9 @@ So I would suspect that the right answer is the fully qualified httpkey URL (and
 
 ## What about the connect method? 
 
-Connect doesn’t really apply here since this is about how to process a httpkey URL which requires establishing a TLS connection from the get go. That is intentional since Thali’s philosophy is that all connections should always be secure. Connect is when you start with an unencrypted connection and want to negotiate up but we don’t support that.
+Connect doesnâ€™t really apply here since this is about how to process a httpkey URL which requires establishing a TLS connection from the get go. That is intentional since Thaliâ€™s philosophy is that all connections should always be secure. Connect is when you start with an unencrypted connection and want to negotiate up but we donâ€™t support that.
 
-And yes, I realize Connect can be used for other purposes. Once a httpkey connection is established it’s really just HTTP so you can do whatever you want.
+And yes, I realize Connect can be used for other purposes. Once a httpkey connection is established itâ€™s really just HTTP so you can do whatever you want.
 
 ## How is this different than HTTPS? 
 
@@ -99,25 +99,25 @@ HTTPS is fundamentally about binding a DNS name to a public key through the atte
 
 ## Why don't you use a hash of the key rather than key? 
 
-Just one more thing to get wrong or to provide a particular security attack against. The main advantage, obviously, for a hash is brevity. But even a hashed key is unreadable and untype-able. So to heck with it, let’s just simplify things and put the whole key in. In the old days there were additional concerns about URL sizes but now that whole files get moved around in URLs that isn’t the problem it used to be.
+Just one more thing to get wrong or to provide a particular security attack against. The main advantage, obviously, for a hash is brevity. But even a hashed key is unreadable and untype-able. So to heck with it, letâ€™s just simplify things and put the whole key in. In the old days there were additional concerns about URL sizes but now that whole files get moved around in URLs that isnâ€™t the problem it used to be.
 
 ## Why don't you use the cert instead of the key? 
 
-Because we aren’t validating a cert, we are validating a key. A cert is a way for some authority to make assertions about a key. And that is useful in httpkey when we deal with chaining but the thing being validate is the key, not the cert. So that’s why the key is in the URL.
+Because we arenâ€™t validating a cert, we are validating a key. A cert is a way for some authority to make assertions about a key. And that is useful in httpkey when we deal with chaining but the thing being validate is the key, not the cert. So thatâ€™s why the key is in the URL.
 
 ## What about key expiration? Or key revocation? 
 
-Experience over the last several decades argues that key revocation just doesn’t work. Nobody checks the revocation lists. Checking them on each request is too expensive in terms of latency (since in theory you shouldn’t try your connection until the revocation list is validated) and the behavior when the list endpoint isn’t available gets nasty (do you refuse the connection?). So generally revocation lists are considered a failure. Expiration is much more useful. I suspect that for every time expiration successfully kept a key from being inappropriately used there are 1,000,000 (and yes, I mean that many) cases where expiration just made an otherwise fine connection fail.
+Experience over the last several decades argues that key revocation just doesnâ€™t work. Nobody checks the revocation lists. Checking them on each request is too expensive in terms of latency (since in theory you shouldnâ€™t try your connection until the revocation list is validated) and the behavior when the list endpoint isnâ€™t available gets nasty (do you refuse the connection?). So generally revocation lists are considered a failure. Expiration is much more useful. I suspect that for every time expiration successfully kept a key from being inappropriately used there are 1,000,000 (and yes, I mean that many) cases where expiration just made an otherwise fine connection fail.
 
 So my general feeling is that one got a httpkey URL from a context. To the extent that revocation or expiration matters then that should be handled in that source context, not by trying to turn the URL into a mini-file format.
 
-## Why is cert chaining supported at all? Wouldn’t it be simpler to leave it out? 
+## Why is cert chaining supported at all? Wouldnâ€™t it be simpler to leave it out? 
 
 It turns out to have really nice security properties. For example, a properly paranoid person would never have their root key on the Internet. Instead they would use an air gapped computer that uses a limited communication channel (infrared? Camera? Nfc?) to issue keys to devices. The identity key is therefore never directly on the net and we now have set up a way to limit the potential damage if a device (or other trusted entity) is compromised. The assumption being that Thali or some other context from which the httpkey comes has a way to push out information about revocations. So we like cert chains.
 
 ## What if the desired key is in the middle instead of the end of a chain of certs? 
 
-Right now the spec just says that the key being sought for has to show up somewhere in the chain, it doesn’t say it has to be the root. I’m still not sure if that’s a bug or a feature.
+Right now the spec just says that the key being sought for has to show up somewhere in the chain, it doesnâ€™t say it has to be the root. Iâ€™m still not sure if thatâ€™s a bug or a feature.
 
 ## What about YURLS? 
 
