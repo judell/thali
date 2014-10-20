@@ -119,7 +119,7 @@ This will upload your changes to your forked repository. You will need your name
 
 Merging is one of the hazards of doing development and good tools are essential. Git uses a three way merge paradigm where it looks at the newest common ancestor of the local branch and the remote branch and then compares both files against that. Doing this without a GUI is possible but really no fun. The best GUI I've found so far to do this is free (as in beer) and available [here](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools) is called P4Merge. 
 
-You have to tell Git to use P4merge as your merge tool. To do that issue these commands taken from [http://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool here](http://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool here):
+You have to tell Git to use P4merge as your merge tool. To do that issue these commands taken from [here](http://stackoverflow.com/questions/426026/git-on-windows-how-do-you-set-up-a-mergetool):
 
 ```
  git config --global merge.tool p4merge
