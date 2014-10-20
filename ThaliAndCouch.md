@@ -70,7 +70,7 @@ But once we had the CouchDB server it became quite natural to ask - well what ab
    		     -------------------------------------------------------------------
 		     |                    Thali Device Hub                             |
 		     |                                                                 |
-Local Thali App -->  | Local CouchDB Singleton Service <--  Local Replication Manager  |
+Local Thali App -->  | Local CouchDB Singleton Service  --  Local Replication Manager  |
 		     |           /-\                                    |              |
 		     |            |                                     |              |
 		     |            |                                     |              |
