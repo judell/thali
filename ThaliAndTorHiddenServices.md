@@ -11,12 +11,13 @@ Right now using Tor Hidden services is hard for us because HSs are clearly desig
 
 <dl>
 
-<dt> HS</td>
-<dd> Tor Hidden Service</dd>
-<dt> OP</td>
-<dd> Tor Onion Proxy</dd>
-<dt> OR</dt>
+<dt> HS </dt>
+<dd> Tor Hidden Service </dd>
+<dt> OP </dt>
+<dd> Tor Onion Proxy </dd>
+<dt> OR </dt>
 <dd> Tor Onion Router</dd>
+
 </dl>
 
 # Scenarios 
