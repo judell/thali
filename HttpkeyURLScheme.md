@@ -1,4 +1,4 @@
-﻿---
+---
 title: Httpkey URL Scheme
 layout: default
 ---
