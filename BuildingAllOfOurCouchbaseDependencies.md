@@ -21,8 +21,11 @@ NOTE: YOU MUST HAVE INSTALLED 32 BIT JAVA AND CONFIGURED INTELLIJ TO USE 32 BIT 
 <dt> Repository Locations</dt>
 
 <dd> <a href="https://github.com/thaliproject/couchbase-lite-java-core">https://github.com/thaliproject/couchbase-lite-java-core</a>, <a href="https://github.com/thaliproject/couchbase-lite-java-listener">https://github.com/thaliproject/couchbase-lite-java-listener</a>, <a href="https://github.com/thaliproject/couchbase-lite-android">https://github.com/thaliproject/couchbase-lite-android</a> & <a href="https://github.com/thaliproject/couchbase-lite-java">https://github.com/thaliproject/couchbase-lite-java</a> </dd>
+
 <dt> Branch </dt>
-<dd> master</dd>
+
+<dd> master </dd>
+
 </dl>
 
 We have our own custom version of the entire CouchBase Lite stack that has a variety of features that aren't in mainline CouchBase Lite. Which is why we have to fork everything.

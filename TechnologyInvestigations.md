@@ -19,5 +19,5 @@ Thali has also looked at how it can leverage existing technologies. Those invest
 * [Thali and Tor Onion Proxy](ThaliAndTorOnionProxy)
 * [Thali and Tor Hidden Services](ThaliAndTorHiddenServices)
 * [CouchDB Clients to Thali enable](CouchDBClientsToThaliEnable)
-* [Technologies to pick for ad-hoc and mesh networking](Technologies to pick for ad-hoc and mesh networking)
-* [Picking a backlog manager for Thali](Picking a backlog manager for Thali)
+* [Technologies to pick for ad-hoc and mesh networking](TechnologiesToPickForAd-hocAndMeshNetworking)
+* [Picking a backlog manager for Thali](PickingABacklogManagerForThali)
