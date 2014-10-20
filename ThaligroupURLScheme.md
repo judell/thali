@@ -1,16 +1,21 @@
-#### Introduction 
+---
+title: Thaligroup URL Scheme
+layout: default
+---
+
+# Introduction 
 
 The thaligroup URL scheme is used to identify a group defined by a particular entity. The primary scenario for thaligroup URLs is in replication requests to Thali Device Hubs (TDHs). An application would submit a CouchDB replication request to a TDH with a thaligroup URL as the source or target. The TDH would then be responsible for expanding the single replication request into multiple requests, one for each member of the identified group.
 
-#### Requirements 
+# Requirements 
 
 The thaligroup URL MUST support unambiguously identifying a particular group as defined by a particular principal.
 
 The thaligroup URL MUST support translating the thaligroup URL into other URL types, such as HTTPKEY, in order to translate the Thali group URL into a set of URLs, one for each member of the group.
 
-#### URL Syntax 
+# URL Syntax 
 
-```
+<pre>
  thaligroup-URI = "thaligroup:" "/" owner "/" group "/" path
  owner = type-value
  group = segment-nz-nc / type-value
@@ -18,23 +23,23 @@ The thaligroup URL MUST support translating the thaligroup URL into other URL ty
  type-value = type ":" value
  type = scheme
  value = segment
-```
+</pre>
 
-The productions path-abempty, query and fragment are defined in section 2.7.2 of [[http://tools.ietf.org/html/rfc7230 RFC 7230]]. The productions segment-nz-nc, scheme and segment are defined in [[http://tools.ietf.org/html/rfc3986 RFC 3986].
+The productions path-abempty, query and fragment are defined in section 2.7.2 of [http://tools.ietf.org/html/rfc7230 RFC 7230](http://tools.ietf.org/html/rfc7230 RFC 7230). The productions segment-nz-nc, scheme and segment are defined in [http://tools.ietf.org/html/rfc3986 RFC 3986](http://tools.ietf.org/html/rfc3986 RFC 3986)
 
 All owner, group and path types MUST be registered with IANA following <code>[insert appropriate magic here]</code>.
 
-#### Owner 
+# Owner 
 
-Groups MUST be defined in the context of an owner. The owner production identifies who that owner can be. All identity-key productions defined in [[Httpkey URL Scheme]] are automatically registered as owner values.
+Groups MUST be defined in the context of an owner. The owner production identifies who that owner can be. All identity-key productions defined in [Httpkey URL Scheme](HttpkeyURLScheme) are automatically registered as owner values.
 
 [OPEN ISSUE: By only using the identity-key we identify the owner by their public key. But that isn't actually resolvable. Do we want to also stick in the ability to put in an onion address or other owner authority?]
 
-#### Group 
+# Group 
 
 The group production defines the name of the group being referenced. This specification does not define any group type-value productions. Therefore for now only segment-nz-nc values can be used to identify groups. Note however that any group type-value productions that are introduced in the future MUST work with the URI comparison rules described below.
 
-#### Path and transformation 
+# Path and transformation 
 
 This specification defines the path type "httpkeysimple". The semantics of this path type is that if the thaligroup URI is to be transformed and contains a "httpkeysimple" path then the transformation MUST be to a httpkey URL.
 
@@ -48,17 +53,17 @@ A transformer transforming a thaligroup URI with a path of type "httpkeysimple" 
 
 A transformer MUST reject transformation requests for thaligroup URIs whose path type is not supported.
 
-#### Comparing thaligroup URIs and their component parts 
+# Comparing thaligroup URIs and their component parts 
 
 By default only simple string comparison as defined in section 6.2.1 of [RFC 3986](http://tools.ietf.org/html/rfc3986) MUST be used to compare two thaligroup URIs for equality.
 
-In terms of comparing owners on their own the rules specific in [[Httpkey URL Scheme]] MUST be used.
+In terms of comparing owners on their own the rules specific in [Httpkey URL Scheme](HttpkeyURLScheme) MUST be used.
 
 To just compare the group parts of a thaligroup URI the comparison logic MUST first prove equality of owner as specified above and then MUST do a simple string comparison of just the group production. If both parts are equal then the identified groups are the same.
 
-#### Example 
+# Example 
 
-```
+<pre>
  thaligroup:/rsapublickey:65537.22912332915818678422150816008567595304572
  530270766238859922343032791612966824557932947659960333351153388435158284
  666309248825175974911964431170141623906931040856664130981842177060601883
@@ -69,13 +74,13 @@ To just compare the group parts of a thaligroup URI the comparison logic MUST fi
  874774561851138101896806013797598277895539034330328094877276084533967507
  831910523283288815798592996543256860992426377095371666673172691091922277
  /goodfriends/httpkeysimple/photos
-```
+</pre>
 
 Please note that the introduced white space is just for readability purposes.
 
 This thaligroup URI specifies that it refers to the group named goodfriends as defined by the identified owner. If transformed it would return zero or more httpkey URLs containing the membership of the goodfriends group as defined by the identified owner/group name combination and would append "/photos" to each of the httpkey URLs in the group.
 
-#### Q&A 
+# Q&A 
 
-##### Is this spec done? 
-See [[Httpkey_URL_Scheme#user-content-is-this-spec-done]], the same applies here.
+## Is this spec done? 
+See [Httpkey URL Scheme](HttpkeyURLScheme), the same applies here.

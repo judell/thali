@@ -28,7 +28,7 @@ The use of HttpKey means that Thali doesn't work with the open web as we know it
 
 ## Firewalls & NATs 
 
-As a practical matter firewalls and NATs make it between difficult and impossible to host services behind them. The good news is that there are standardized efforts to address these problems, the bad news is that these efforts are either often unsupported by real world firewalls/NATs or not fit for our purposes (e.g. see [here](Stun_Turn_ICE_Investigation). However there is one solution that is free and widely deployed that does meet our needs in many, although not all, cases - [Tor hidden services](https://www.torproject.org/docs/hidden-services.html.en ). So we will be adopting Tor hidden services as our foundational mechanism for exposing server endpoints on devices.
+As a practical matter firewalls and NATs make it between difficult and impossible to host services behind them. The good news is that there are standardized efforts to address these problems, the bad news is that these efforts are either often unsupported by real world firewalls/NATs or not fit for our purposes (e.g. see [here](StunTurnICEInvestigation). However there is one solution that is free and widely deployed that does meet our needs in many, although not all, cases - [Tor hidden services](https://www.torproject.org/docs/hidden-services.html.en ). So we will be adopting Tor hidden services as our foundational mechanism for exposing server endpoints on devices.
 
 ## Device Discovery 
 

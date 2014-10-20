@@ -1,41 +1,46 @@
-#### Introduction 
+---
+title: Httpkey URL Scheme
+layout: default
+---
+
+# Introduction 
 
 Thali is a peer to peer infrastructure that uses mutual SSL auth with self signed keys to allow two endpoints to communicate with each other.
 
-In Thali (taken from systems like [[http://en.wikipedia.org/wiki/Simple_public-key_infrastructure SPKI]]) an identity is a public key. So to securely connect to an endpoint that is believed to be owned by a particular identity that endpoint has to prove it is related to the public key. The httpkey URL format allows one to specify a HTTP endpoint along with the public key that is believed to own that endpoint. When connecting to the endpoint TLS is used and the endpoint has to then authenticate itself via TLS server authentication using either a cert that contains the desired key or the server must present a cert chain that links to the desired key.
+In Thali (taken from systems like [http://en.wikipedia.org/wiki/Simple_public-key_infrastructure SPKI](http://en.wikipedia.org/wiki/Simple_public-key_infrastructure SPKI)) an identity is a public key. So to securely connect to an endpoint that is believed to be owned by a particular identity that endpoint has to prove it is related to the public key. The httpkey URL format allows one to specify a HTTP endpoint along with the public key that is believed to own that endpoint. When connecting to the endpoint TLS is used and the endpoint has to then authenticate itself via TLS server authentication using either a cert that contains the desired key or the server must present a cert chain that links to the desired key.
 
 Outside of ad-hoc networking scenarios we expect Thali endpoints to be exposed as Tor hidden services by default. We therefore mandate that any URL processor that supports httpkey URLs must also support .onion addresses and connecting to Tor hidden services.
 
-#### Requirements 
+# Requirements 
 
 The purpose of the httpkey URL scheme is to allow a client to connect to a server with authentication and privacy protection. The authentication MUST be point to point and must not rely on third parties.
 
 It MUST be possible to locate a Thali peer on whatever network it is running and connect to it in such a manner that outside observers will have difficulty determining that one is talking to the peer.
 
-#### URL Syntax 
+# URL Syntax 
 
-```
+<pre>
  httpkey-URI = "httpkey:" "//" authority "/" identity-key path-abempty [ "?" query ] [ "#" fragment ]
  identity-key = key-type ":" segment
  key-type = scheme
-```
+</pre>
 
-The productions authority, path-abempty, query and fragment are defined in section 2.7.2 of [[http://tools.ietf.org/html/rfc7230 RFC 7230\]]. The production for scheme and segment are taken from [[http://tools.ietf.org/html/rfc3986 RFC 3986]].
+The productions authority, path-abempty, query and fragment are defined in section 2.7.2 of [http://tools.ietf.org/html/rfc7230 RFC 7230\](http://tools.ietf.org/html/rfc7230 RFC 7230\). The production for scheme and segment are taken from [http://tools.ietf.org/html/rfc3986 RFC 3986](http://tools.ietf.org/html/rfc3986 RFC 3986).
 
 All key-type values MUST be registered with IANA following <code>[insert appropriate magic here]</code>.
 
-#### RSA Key Registration 
+# RSA Key Registration 
 
-```
+<pre>
  rsa-key-type = "rsapublickey"
  rsa-key-value = exponent ‘.’ modulus
  exponent = The exponent of the key represented as an ASCII encoded integer (e.g. 12345...)
  modulus = Same as exponent but instead encoding the RSA key’s modulus
-```
+</pre>
 
 Httpkey URL validation with a RSA public key occurs by extracting the exponent and modulus for the public key presented in the X.509 cert presented in the TLS connection and comparing the integer values with the value recorded in the rsapublickey argument in the httpkey URL.
 
-#### Processing a httpkey URL 
+# Processing a httpkey URL 
 
 When asked to resolve a httpkey URL the processing steps are as follows:
 
@@ -53,9 +58,9 @@ After the TLS connection is established then further HTTP processing occurs as n
 
 The request-target value in the request-line MUST be the fully qualified httpkey URL.
 
-#### Example 
+# Example 
 
-```
+<pre>
  httpkey://ku7mzposmlr5343f.onion:9898/rsapublickey:65537.229123329158186784221508160085
  675953045725302707662388599223430327916129668245579329476599603333511533884351582846663
  092488251759749119644311701416239069310408566641309818421770606018830931913117414055303
@@ -64,61 +69,61 @@ The request-target value in the request-line MUST be the fully qualified httpkey
  796830512423632872229877354180111877712047188831455202520895028152738438935287108085195
  264731128747745618511381018968060137975982778955390343303280948772760845339675078319105
  23283288815798592996543256860992426377095371666673172691091922277/addressbook
-```
+</pre>
 
 This httpkey URL is used to talk to a Thali Device Hub's addressbook database. Please note that the introduced white space is just for readability purposes.
 
-##### Q&A 
+## Q&A 
 
-##### Is this spec done? 
+## Is this spec done? 
 
 No. We need to go through the HTTP and HTTPS specs with a microscope and figure out all the places that things are underspecified. For example, if someone connects via a httpkey URL should they accept a redirect to a non-httpkey URL? What if the redirect is to a httpkey URL but with a different key? Etc.
 
-##### Don’t we need requirements for the accepted configuration parameters for TLS? 
+## Don’t we need requirements for the accepted configuration parameters for TLS? 
 
 Yes. I intend to expand the spec to identify allowable algorithms, key sizes, etc. But right now I just want to get something running.
 
-##### What should go into the request line on a HTTP request using httpkey?  
+## What should go into the request line on a HTTP request using httpkey?  
 
 So I would suspect that the right answer is the fully qualified httpkey URL (and yes, [that is legal](http://tools.ietf.org/html/draft-ietf-httpbis-p1-messaging-26#section-5.3)). But right now all my code actually turns the URL into a HTTPS URL locally and puts that through the stack (after I've fixed up the socket underneath to support mutual SSL auth and Tor) because, well, it's easier. But at some point I should do the right thing.
 
-##### What about the connect method? 
+## What about the connect method? 
 
 Connect doesn’t really apply here since this is about how to process a httpkey URL which requires establishing a TLS connection from the get go. That is intentional since Thali’s philosophy is that all connections should always be secure. Connect is when you start with an unencrypted connection and want to negotiate up but we don’t support that.
 
 And yes, I realize Connect can be used for other purposes. Once a httpkey connection is established it’s really just HTTP so you can do whatever you want.
 
-##### How is this different than HTTPS? 
+## How is this different than HTTPS? 
 
 HTTPS is fundamentally about binding a DNS name to a public key through the attestation of a set of certificate authorities. Httpkey is about validating that a presented key is the expected key. There is no DNS name and no certificate authorities. But in both cases once the security is done what one is left with is a HTTP connection.
 
-##### Why don't you use a hash of the key rather than key? 
+## Why don't you use a hash of the key rather than key? 
 
 Just one more thing to get wrong or to provide a particular security attack against. The main advantage, obviously, for a hash is brevity. But even a hashed key is unreadable and untype-able. So to heck with it, let’s just simplify things and put the whole key in. In the old days there were additional concerns about URL sizes but now that whole files get moved around in URLs that isn’t the problem it used to be.
 
-##### Why don't you use the cert instead of the key? 
+## Why don't you use the cert instead of the key? 
 
 Because we aren’t validating a cert, we are validating a key. A cert is a way for some authority to make assertions about a key. And that is useful in httpkey when we deal with chaining but the thing being validate is the key, not the cert. So that’s why the key is in the URL.
 
-##### What about key expiration? Or key revocation? 
+## What about key expiration? Or key revocation? 
 
 Experience over the last several decades argues that key revocation just doesn’t work. Nobody checks the revocation lists. Checking them on each request is too expensive in terms of latency (since in theory you shouldn’t try your connection until the revocation list is validated) and the behavior when the list endpoint isn’t available gets nasty (do you refuse the connection?). So generally revocation lists are considered a failure. Expiration is much more useful. I suspect that for every time expiration successfully kept a key from being inappropriately used there are 1,000,000 (and yes, I mean that many) cases where expiration just made an otherwise fine connection fail.
 
 So my general feeling is that one got a httpkey URL from a context. To the extent that revocation or expiration matters then that should be handled in that source context, not by trying to turn the URL into a mini-file format.
 
-##### Why is cert chaining supported at all? Wouldn’t it be simpler to leave it out? 
+## Why is cert chaining supported at all? Wouldn’t it be simpler to leave it out? 
 
 It turns out to have really nice security properties. For example, a properly paranoid person would never have their root key on the Internet. Instead they would use an air gapped computer that uses a limited communication channel (infrared? Camera? Nfc?) to issue keys to devices. The identity key is therefore never directly on the net and we now have set up a way to limit the potential damage if a device (or other trusted entity) is compromised. The assumption being that Thali or some other context from which the httpkey comes has a way to push out information about revocations. So we like cert chains.
 
-##### What if the desired key is in the middle instead of the end of a chain of certs? 
+## What if the desired key is in the middle instead of the end of a chain of certs? 
 
 Right now the spec just says that the key being sought for has to show up somewhere in the chain, it doesn’t say it has to be the root. I’m still not sure if that’s a bug or a feature.
 
-##### What about YURLS? 
+## What about YURLS? 
 
 There really is nothing new under the sun. I described the idea for the httpkey URL scheme to a coworker (Hey [Julien](http://blog.monstuff.com/)!) and he immediately pointed to me to [YURLs](http://www.waterken.com/dev/YURL/). To be fair these ideas go back even farther to places like SPKI and SDSI.
 
-##### Doesn't TLS leak user identities?
+## Doesn't TLS leak user identities?
 
 I am not a TLS expert and I don't play one one TV but it seems pretty obvious that the answer is, unfortunately, YES.
 
@@ -156,7 +161,7 @@ So imagine peer A advertises their location using the above strategy. Peer B see
 
 So we *can* work around this. But it looks like the TLS 1.3 working group is working on this problem so hopefully they will solve it for us.
 
-##### Wait... does this mean that clients must always use Tor? 
+## Wait... does this mean that clients must always use Tor? 
 
 In other words, are clients always required to have a client Tor Tunnel?
 
@@ -168,15 +173,15 @@ We use Tor whenever possible.
 
 But there are times when a user might legitimately choose not to use Tor. Either they are trying for a non-routable address (e.g. local network only) or they want better performance and are willing to give up some privacy to get it. But the choice for the client to use its own Tor tunnel is not something that the httpkey URL spec has anything to say about. The job of a URL is to specify where the resource is and that's it. The choice of using a client Tor tunnel doesn't apply to that problem.
 
-##### What's up with the prohibition on resolving .onion addresses outside of Tor? 
+## What's up with the prohibition on resolving .onion addresses outside of Tor? 
 
 The .onion address looks like a domain name that has the root domain '.onion'. This is something you can pass to a DNS resolver and try to resolve. It will fail (at least until .onion is standardized) but even the act of looking up the address leaks information to the DNS server and if DNSSEC isn't being used, to whomever is monitoring look ups. That's why we can only look up .onion addresses via the Tor infrastructure.
 
-##### What about other systems like I2P? 
+## What about other systems like I2P? 
 
 There is no reason we can't support I2P. It's not clear if we would do this through a new URL type or through a domain hack. Given I2P's nature I would suspect the former but regardless we can get there from here. I actually had a lovely chat with the I2P developers and it turns out that currently they require UDP access to function and that is a show stopper for us since we need to run behind stateful firewalls that only support outgoing TCP on port 80 & 443. But there is nothing fundamental in I2P that stops it from running on port 443 over TCP. Furthermore there is nothing stopping us once we hit our min bar from putting in I2P support anyway.
 
-##### What about the Tor hidden service's authorization features?
+## What about the Tor hidden service's authorization features?
 
 Sigh... so um... this is kind of embarrassing. But I actually don't really understand the features described in sections 2.1 and 2.2 of [rend-spec](https://gitweb.torproject.org/torspec.git/blob/HEAD:/rend-spec.txt). I need to ask for help from the Tor group.
 
@@ -186,7 +191,7 @@ Section 2.2 actually seems to generate a new public key associated with a partic
 
 I suspect both authorization mechanisms have a place in Thali. But nothing like the client key or cookie should ever appear in a URL! These are secrets. So they will need to be communicated out of band. Eventually we'll need to define how that communication occurs and put in the software to support configuring everything on the client and server side. But all of those issues are actually out of scope for this spec.
 
-##### Does it really matter that Tor doesn't support cert chaining for identifying hidden services?
+## Does it really matter that Tor doesn't support cert chaining for identifying hidden services?
 
 Because of the lack of cert chaining it's not a good idea for a user to use their public key as their Tor hidden service key. See above for the details on that.
 
@@ -204,13 +209,13 @@ The other problem is longevity. I've had the same email address for more than a 
 
 If we can't get cert chain support then we'll need to emulate it through another mechanism. I can imagine us using something like [freenet](https://freenetproject.org/) but getting it to support cert chains so someone can publish something indexed to key X using key Y where they can present a chain from Y to X. But this is just moving the problem around, not solving it and anyway I hate to introduce a whole other project though so my hope is that we can just get cert chain support in Tor directories.
 
-##### Isn't it good that you can't use the Thali user key as the address? Otherwise everyone could observe traffic at the directories related to you
+## Isn't it good that you can't use the Thali user key as the address? Otherwise everyone could observe traffic at the directories related to you
 
 It is a feature that one can choose to have a Tor key that is different than one's personal key because it does make it more difficult to look at who wants to talk to you by monitoring the look up directories. But in the case mentioned above where one wants to be discoverable by previously unknown principals then alas directory sniffing is the price.
 
 So we want to enable folks who want a public identity to be able to do so but also support those who want to stay strictly private to do that as well. So having two different keys, one for the person and one for Tor is a feature in some cases.
 
-##### How do you revoke an existing onion address and publish a new one?!?
+## How do you revoke an existing onion address and publish a new one?!?
 
 There are two scenarios here. One is a roll over. Presumably in that case the TDH will listen on both the new and old address and let anyone who connects to the old address know that they should switch to the new address. One way to 'let them know' is to push a sync to the connector letting them know about the update.
 

@@ -9,7 +9,7 @@ This document is exclusively intended for people who are developing Thali itself
 
 # FIRST THING 
 
-Go off to [[https://github.com/thaliproject/]] and after you login with your GitHub account please go to each of the projects and hit 'watch'. We don't send out emails with notifications of PRs, issues, builds, etc. We use GitHub for that. So you need to be set up to watch (and make sure your settings at GitHub are that you should be emailed when a watch even happens) or you will miss what's going on.
+Go off to [https://github.com/thaliproject/](https://github.com/thaliproject/) and after you login with your GitHub account please go to each of the projects and hit 'watch'. We don't send out emails with notifications of PRs, issues, builds, etc. We use GitHub for that. So you need to be set up to watch (and make sure your settings at GitHub are that you should be emailed when a watch even happens) or you will miss what's going on.
 
 Next go [here](https://www.pivotaltracker.com/n/projects/1163162). That is where we keep our backlog. If you are officially part of the project then go bug Yaron to set up an account for you so you can be assigned items. By default however it is world readable so anyone can track what we are up to.
 
@@ -19,15 +19,15 @@ Our first dependency is Tor_Onion_Proxy_Library. It contains three sub-projects,
 
 Next up is our CouchBase forks. These contain custom versions of CouchBase with extensions we need. The dependency structure is:
 
-```
+<pre>
  couchbase-lite-java-native <- couchbase-lite-java-core <- couchbase-lite-listener 
                                                         <- couchbase-lite-java
                                                         <- couchbase-lite-android
 ```
 
-We then have the Thali project which is where we build the TDH. Right now there is an odd structure in there involving two root directories, Production and Prototype. When we resolve [[https://www.pivotaltracker.com/story/show/78493988]] we will get rid of Prototype and hoist the contents of Production to the root. For now we will ignore Prototype.
+We then have the Thali project which is where we build the TDH. Right now there is an odd structure in there involving two root directories, Production and Prototype. When we resolve [https://www.pivotaltracker.com/story/show/78493988](https://www.pivotaltracker.com/story/show/78493988) we will get rid of Prototype and hoist the contents of Production to the root. For now we will ignore Prototype.
 
-```
+<pre>
  Thali
   -Production
    -Utilities
@@ -42,7 +42,7 @@ Of these right now active development is focused on UniversalUtilities, JavaUtil
 
 This then takes us to:
 
-```
+<pre>
  Thali
   -Production
    -ThaliDeviceHub
@@ -71,7 +71,7 @@ The most sane way to handle things until we have Jenkins automating our builds i
 
 1. On your dev machine clone all your forks into the same directory
 
-1. Set up your gradle.properties as explained in [[Understanding Thalis Use of Maven]]
+1. Set up your gradle.properties as explained in [Understanding Thali's Use of Maven](UnderstandingThalisUseOfMaven)
 
 1. Now go to the thali clone and run "thali\Production\gradlew installAll"
 
@@ -111,9 +111,9 @@ Right now we are using stock PouchDB. We just keep this section around if we hav
 
 We need a bunch of software. We use IntelliJ Ultimate Edition although I'm told that the (free) community edition supports what we do just fine. In addition one needs the latest JDK, latest Android SDK, a local maven installation, gradle and a decent android emulator and/or device.
 
-We have a bunch of instructions on how to get this software for Windows, see [[set up for windows]] but we have tested everything on Mac and Linux and it all runs just fine there as well.
+We have a bunch of instructions on how to get this software for Windows, see [set up for windows](SetupForWindows) but we have tested everything on Mac and Linux and it all runs just fine there as well.
 
-NOTE: EVEN IF YOU AREN'T RUNNING ON WINDOWS STILL READ THE [[set up for windows]] BECAUSE IT CONTAINS IMPORTANT CONFIGURATION INSTRUCTIONS THAT APPLY TO ALL PLATFORMS
+NOTE: EVEN IF YOU AREN'T RUNNING ON WINDOWS STILL READ THE [set up for windows](SetupForWindows) BECAUSE IT CONTAINS IMPORTANT CONFIGURATION INSTRUCTIONS THAT APPLY TO ALL PLATFORMS
 
 # Git 
 
