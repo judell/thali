@@ -1,3 +1,8 @@
+---
+title: Configuring PouchDB
+layout: default
+---
+
 <dl> 
 
 <dt>Repository Location</dt>
