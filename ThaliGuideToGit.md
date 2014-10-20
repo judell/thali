@@ -38,7 +38,10 @@ There are now three repositories you care about.
 When you cloned your forked repository on your dev box Git understood it was a clone and automatically set up the identity of the forked repository. It calls your forked repository 'origin'.
 
 But what about the master repository? As we'll discuss below there are times you will need to pull down changes from it. To enable that we need to tell your local repository about the master repository. Open up the Git Bash shell, navigate to the root of your local repository and type in: 
+
+<pre>
  git remote add upstream [url of master repository]
+</pre>
 
 What the previous command did was tell your local repository that there is another repository it will know as 'upstream' (this is the traditional name, just like 'origin' is the traditional name for your forked repository).
 
