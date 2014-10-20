@@ -5,7 +5,7 @@ layout: default
 
 <dl>
 <dt> Repository Location</dt>
-<dd> [https://github.com/thaliproject/couchbase-lite-java-native](https://github.com/thaliproject/couchbase-lite-java-native)</dd>
+<dd> <a href="https://github.com/thaliproject/couchbase-lite-java-native">https://github.com/thaliproject/couchbase-lite-java-native</a></dd>
 <dt> Branch</dt>
 <dd> master</dd>
 </dl>
@@ -16,7 +16,7 @@ NOTE: YOU MUST HAVE INSTALLED 32 BIT JAVA AND CONFIGURED INTELLIJ TO USE 32 BIT 
 
 <dl>
 <dt> Repository Locations</dt>
-<dd> [https://github.com/thaliproject/couchbase-lite-java-core](https://github.com/thaliproject/couchbase-lite-java-core), [https://github.com/thaliproject/couchbase-lite-java-listener](https://github.com/thaliproject/couchbase-lite-java-listener), [https://github.com/thaliproject/couchbase-lite-android](https://github.com/thaliproject/couchbase-lite-android) & [https://github.com/thaliproject/couchbase-lite-java](https://github.com/thaliproject/couchbase-lite-java)
+<dd> <a href="https://github.com/thaliproject/couchbase-lite-java-core">https://github.com/thaliproject/couchbase-lite-java-core</a>, <a href="https://github.com/thaliproject/couchbase-lite-java-listener">https://github.com/thaliproject/couchbase-lite-java-listener</a>, <a href="https://github.com/thaliproject/couchbase-lite-android">https://github.com/thaliproject/couchbase-lite-android</a> & <a href="https://github.com/thaliproject/couchbase-lite-java">https://github.com/thaliproject/couchbase-lite-java</a>
 <dt> Branch </dt>
 <dd> master</dd>
 </dl>
