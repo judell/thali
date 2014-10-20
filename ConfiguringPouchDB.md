@@ -1,7 +1,7 @@
 <dl> 
 
 <dt>Repository Location</dt>
-<dd>[[https://github.com/yaronyg/pouchdb]]
+<dd><a href="https://github.com/yaronyg/pouchdb">https://github.com/yaronyg/pouchdb</a></dd>
 <dt> Branch</dt>
 <dd> master</dd>
 </dl>
