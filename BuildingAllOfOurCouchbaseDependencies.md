@@ -36,10 +36,10 @@ To actually do a build:
 
 You may need to update the gradle.properties file (until the bug fix is committed) to this build to satisfy the build.gradle requirement for MAVEN_UPLOAD_VERSION.  Should look like this:
 
-```
+<pre>
 systemProp.UPLOAD_VERSION_CBLITE=1.0.0-beta3rc1
 systemProp.MAVEN_UPLOAD_VERSION=1.0.0-beta3rc1
-```
+</pre>
 
 First try fails, header file conflicts.
 
