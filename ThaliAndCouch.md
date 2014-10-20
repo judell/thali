@@ -67,20 +67,20 @@ But once we had the CouchDB server it became quite natural to ask - well what ab
 </dl>
 
 <pre>
-   		     -------------------------------------------------------------------
-		     |                    Thali Device Hub                             |
-		     |                                                                 |
+                     -------------------------------------------------------------------
+                     |                    Thali Device Hub                             |
+                     |                                                                 |
 Local Thali App -->  | Local CouchDB Singleton Service  --  Local Replication Manager  |
-		     |           /-\                                    |              |
-		     |            |                                     |              |
-		     |            |                                     |              |
-		     |            |                                     |              |
-		     | Local Tor Hidden Service Proxy           Local Tor Client       |
-		     -------------|-------------------------------------|---------------
-				  |                                     |
-		      Tor Hidden Service Infrastructure ]               |
-				  |                                    \_/
-		       Remote Authorized Entities            Remote Authorized Entities
+                     |            |                                     |              |
+                     |            |                                     |              |
+                     |            |                                     |              |
+                     |            |                                     |              |
+                     | Local Tor Hidden Service Proxy           Local Tor Client       |
+                     -------------|-------------------------------------|---------------
+                                  |                                     |
+                      Tor Hidden Service Infrastructure ]               |
+                                  |                                     |
+                       Remote Authorized Entities            Remote Authorized Entities
 
 </pre>
 
