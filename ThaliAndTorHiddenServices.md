@@ -46,6 +46,7 @@ Each requirement is given an identifier, the identifier isn't necessarily meanin
 <dd> A HS MUST be able to frequently switch its underlying network address without impairing its ability to be discovered by clients.</dd>
 </dl>
 
+<dl>
 <dt> ReqCleanDisconnect</dt>
 <dd> A HS MUST be able to make it clear that it is not available for connection to clients.</dd>
 </dl>
