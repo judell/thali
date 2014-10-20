@@ -1,6 +1,11 @@
+---
+title: Building our .NET Projects
+layout: default
+---
+
 <dl>
 <dt> Repository Location</dt>
-<dd> [[https://thali.codeplex.com/]] </dd>
+<dd> https://thali.codeplex.com/ </dd>
 <dt> Branch</dt>
 <dd> master</dd>
 <dt> Project Location</dt>
