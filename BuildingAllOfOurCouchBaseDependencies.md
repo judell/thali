@@ -5,18 +5,18 @@ layout: default
 
 <dl>
 <dt> Repository Location</dt>
-<dd> https://github.com/yaronyg/couchbase-lite-java-native</dd>
+<dd> [[https://github.com/thaliproject/couchbase-lite-java-native]]</dd>
 <dt> Branch</dt>
 <dd> master</dd>
-<dl>
+</dl>
 
-This is the CouchBase repository that builds SQLite (from a [single](https://raw.githubusercontent.com/couchbase/couchbase-lite-java-native/master/src/main/c/sqlite3.c) [amalgamated](https://sqlite.org/amalgamation.html) C file) and makes it available to Java. Note that the Windows build is handled via Visual Studio so please make sure you have that installed when you build on Windows.
+This is the CouchBase repository that builds SQLite from a [single](https://raw.githubusercontent.com/couchbase/couchbase-lite-java-native/master/src/main/c/sqlite3.c) [amalgamated](https://sqlite.org/amalgamation.html) C file and makes it available to Java. Note that the Windows build is handled via Visual Studio so please make sure you have that installed when you build on Windows.
 
 NOTE: YOU MUST HAVE INSTALLED 32 BIT JAVA AND CONFIGURED INTELLIJ TO USE 32 BIT JAVA OR BAD THINGS WILL HAPPEN. 
 
 <dl>
 <dt> Repository Locations</dt>
-<dd> https://github.com/yaronyg/couchbase-lite-java-core, https://github.com/yaronyg/couchbase-lite-java-listener, https://github.com/yaronyg/couchbase-lite-android & https://github.com/yaronyg/couchbase-lite-java
+<dd> [[https://github.com/thaliproject/couchbase-lite-java-core]], [[https://github.com/thaliproject/couchbase-lite-java-listener]], [[https://github.com/thaliproject/couchbase-lite-android]] & [[https://github.com/thaliproject/couchbase-lite-java]]
 <dt> Branch </dt>
 <dd> master</dd>
 </dl>
@@ -25,7 +25,7 @@ We have our own custom version of the entire CouchBase Lite stack that has a var
 
 To actually do a build:
 
-1. Follow the instructions in [Understanding Thali's Use Of Maven](UnderstandingThalisUseOfMaven)
+1. Follow the instructions in [[Understanding Thalis Use of Maven]]
 
 1. Open the Git bash shell, go to the root of each project (in the order listed above, order matters since they have dependencies on each other) and issue 'gradlew installAll'
 
@@ -214,3 +214,4 @@ Uploaded 5K
 
 BUILD SUCCESSFUL
 ```
+

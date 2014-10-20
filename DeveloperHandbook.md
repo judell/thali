@@ -90,7 +90,7 @@ Make sure to review these links as they have all sorts of annoying bits of infor
 
 [Understanding Thali's Use of Maven](UnderstandingThalisUseOfMaven)
 
-[Building All Of Our CouchBase Dependencies](BuildingAllOfOurCouchBaseDependencies)
+[Building All Of Our CouchBase Dependencies](BuildingAllOfOurCouchbaseDependencies)
 
 [Building All Of Our Java Thali Projects](BuildingAllOfOurJavaThaliProjects)
 
