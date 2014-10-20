@@ -5,7 +5,7 @@ layout: default
 
 <dl>
 <dt>Repository Location</dt>
-<dd>[[https://github.com/yaronyg/LoveSeat]]
+<dd><a href="https://github.com/yaronyg/LoveSeat">https://github.com/yaronyg/LoveSeat</a></dd>
 <dt>Branch</dt>
 <dd>proposal</dd>
 </dl>
