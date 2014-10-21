@@ -45,7 +45,12 @@ This has numerous implications that you need to be aware of.
 1. it means you don't need to use 'adb forward' to talk to the android device from the host. Instead just use the android device's IP address (the one you got from netcfg in the instructions above) and off you go!
 
 1. it means that if you want to talk from the android device to the host you just use the host's IP address, you can forget all about that 10.0.2.2 stuff you will read about in the Android emulator SDK docs. Now finding your host's IP address can be a tiny bit tricky depending on your setup. On Windows I open a command window on the host and type 'ipconfig'. I typically use ethernet as my primary connection so that is usually the adapter I'm bridged over. For WiFi only folks you will use that address. You will see an adapter called "VirtualBox Host-Only Network", ignore that.
+ 
 
+```
+fenced
+code
+```
 
 
 
