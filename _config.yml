@@ -1,2 +1,4 @@
 encoding: UTF-8
-markdown: redcarpet
+markdown: kramdown
+permalink: pretty
+pygments: true
