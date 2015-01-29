@@ -3,7 +3,7 @@ title: Android Emulator
 layout: default
 ---
 
-NOTE: For Windows 8.1 users. Virtual Box and Hyper-V do not seem to get along well with each other. So if you want to use Virtual Box please disable Hyper-V by going to Control Panel->Programs and Features->Turn Windows feature on or off->Uncheck Hyper-V if it's checked and do the reboot dance.
+NOTE: For Windows 8.1 users. Virtual Box and Hyper-V don't seem to get along well with each other. So if you want to use Virtual Box please disable Hyper-V by going to Control Panel->Programs and Features->Turn Windows feature on or off->Uncheck Hyper-V if it's checked and do the reboot dance.
 Alternatively you can just run the emulator in Hyper-V! See [http://blog.dot42.com/2013/08/running-android-43-in-hyper-v.html](here).
 
 SECOND NOTE: IF YOU ARE GOING TO USE THIS READ THE SECTION BELOW ON NETWORKING SINCE THIS DOESN'T WORK THE WAY THE ANDROID SDK CLAIMS!
