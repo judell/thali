@@ -1,4 +1,4 @@
 # table
 
-|a|b|c|
-|d|e|f|
+|a|c|b|
+|d|e|g|
